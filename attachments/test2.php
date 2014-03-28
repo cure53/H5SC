@@ -1,1 +1,0 @@
-<html> <body> <b>some content without two new line \n\n</b> Content-Type: multipart/related; boundary="******"<b>some content without two new line</b> --****** Content-Location: xss.swf Content-Transfer-Encoding: base64 <?php echo base64_encode(file_get_contents('test.swf')) ?> -- </body> </html>
