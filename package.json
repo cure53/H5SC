@@ -1,0 +1,22 @@
+{
+  "name": "H5SC",
+  "version": "0.0.0",
+  "description": "HTML5 Security Cheatsheet",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:cure53/H5SC.git"
+  },
+  "keywords": [
+    "security"
+  ],
+  "author": "cure53",
+  "license": "Mozilla Public License, version 2.0",
+  "bugs": {
+    "url": "https://github.com/cure53/H5SC/issues"
+  },
+  "homepage": "https://github.com/cure53/H5SC"
+}

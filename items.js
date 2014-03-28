@@ -1,6 +1,20 @@
 /* Items - the set of available items and vectors */
-var items = 
-[
+
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD. Register as an anonymous module.
+    define([], factory);
+  } else if (typeof exports === 'object') {
+    // Node. Does not work with strict CommonJS, but
+    // only CommonJS-like environments that support module.exports,
+    // like Node.
+    module.exports = factory();
+  } else {
+    // Browser globals (root is window)
+    root.items = factory();
+  }
+}(this, function () {
+return [
     { /* ID 1 - XSS via formaction - requiring user interaction (1) */
         'id'         : 1, 
         'category'   : 'html5', 
@@ -4858,3 +4872,4 @@ var items =
         'reporter'  : '.mario'
     }    
 ]
+}));
