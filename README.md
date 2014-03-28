@@ -48,10 +48,12 @@ Pull requests welcome, we store the files in the `/attachments` sub-folder.
 
 ## Hidden Features
 
-The H5SC currently has two hidden features
+The H5SC currently has three "hidden" features
 
  * An RSS mode to test feed readers: https://html5sec.org/rss
  * A JavaScript function to return all vectors as string, isolated and numbered: Go here and execute `vectors()`
- * A useful search API via GET. Want all vectors related to `innerHTML`? Open https://html5sec.org/?innerHTML
+ * A useful search API via GET
+  * Want all vectors related to `innerHTML`? Open https://html5sec.org/?innerHTML
+  * Want to link a specific vector? Open https://html5sec.org/#123
 
  
