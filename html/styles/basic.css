@@ -105,6 +105,7 @@ ul.tags li:hover {
 }
 code.attachment {
     margin-bottom: 10px;
+    display: block !important;
 }
 code.attachment span {
     display: block;
