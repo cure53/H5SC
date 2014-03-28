@@ -174,10 +174,10 @@
         // search functionality
         (function(){
             $('ul.tags li, ul.browsers li').click(function(){
-                $('#search').attr('value', $(this).html()).keyup();        
+                $('#search').val($(this).html()).keyup();        
             });
             $('#search').keyup(function(){
-                var term = $('#search').attr('value');
+                var term = $('#search').val();
                 term = sanitize(term.replace(/([\[\]\(\\)\{\}\+\-])/gm, '\\$1'));
                 if(term) {
                     if(typeof to !== 'undefined') {
@@ -197,15 +197,15 @@
                 } else {$('div.item').show()}
             });
             $('#search').dblclick(function(){
-                $(this).attr('value', '').keyup();
+                $(this).val('').keyup();
             }); 
             $('#sidebar a').click(function(){
-                $('#search').attr('value', '').keyup();
+                $('#search').val('').keyup();
             }); 
             // enable direct jumps via hash url
             if(location.search) {
                 var search = unescape(location.search.replace(/^\?/, ''));
-                $('#search').attr('value', search).keyup();
+                $('#search').val(search).keyup();
             }
         })();
         // language switch
