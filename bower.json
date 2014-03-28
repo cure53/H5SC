@@ -1,0 +1,9 @@
+{
+  "name": "h5sc",
+  "version": "0.0.0",
+  "main": [
+    "items.js",
+  "payloads.js",
+  "categories.js"
+    ]
+}
