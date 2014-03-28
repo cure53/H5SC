@@ -1,6 +1,19 @@
 /* Categories - the available categories */
-var categories =
-{
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else if (typeof exports === 'object') {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like environments that support module.exports,
+        // like Node.
+        module.exports = factory();
+    } else {
+        // Browser globals (root is window)
+        root.categories = factory();
+  }
+}(this, function () {
+return {
     'html5'         : {
         'en' : 'Vectors making use of HTML5 features',
         'ja' : 'HTML5\u306e\u6a5f\u80fd\u3092\u4f7f\u3063\u305f\u624b\u6cd5',
@@ -119,3 +132,4 @@ var categories =
 		'zh' : 'Clickjacking和UI Redressing的向量'
     }
 }
+}));

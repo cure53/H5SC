@@ -1,6 +1,19 @@
 /* Payload - the generic payload templates */
-var payloads = 
-{
+(function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+        // AMD. Register as an anonymous module.
+        define([], factory);
+    } else if (typeof exports === 'object') {
+        // Node. Does not work with strict CommonJS, but
+        // only CommonJS-like environments that support module.exports,
+        // like Node.
+        module.exports = factory();
+    } else {
+        // Browser globals (root is window)
+        root.payloads = factory();
+  }
+}(this, function () {
+return {
     'js_uri_alert'      : 'javascript:alert(1)',
     'js_uri_alert_2'    : 'javascript:alert(2)',
     'js_uri_alert_3'    : 'javascript:alert(3)',
@@ -34,3 +47,4 @@ var payloads =
     'jar_path'          : 'test.jar',
     'event_path'        : 'event.php'
 }
+}));
