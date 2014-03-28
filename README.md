@@ -44,13 +44,13 @@ We published a list of files useful for XSS testing in various situations. Curre
  * https://html5sec.org/test.xxe
  * https://html5sec.org/test.zip
 
-Pull requests welcome, we store the files in the `/attachments` subfolder.
+Pull requests welcome, we store the files in the `/attachments` sub-folder.
 
 ## Hidden Features
 
 The H5SC currently has two hidden features
 
- * An RSS mode to test feed readers: https://html5sec.org/
- * A JavaScript function to retrun all vectors as string, isolated and numbered: Go here and execute `vectors()`
+ * An RSS mode to test feed readers: https://html5sec.org/rss
+ * A JavaScript function to return all vectors as string, isolated and numbered: Go here and execute `vectors()`
 
  
