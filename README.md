@@ -43,6 +43,7 @@ We published a list of files useful for XSS testing in various situations. Curre
  * https://html5sec.org/test.xsl
  * https://html5sec.org/test.xxe
  * https://html5sec.org/test.zip
+ * https://html5sec.org/Test.class
 
 Pull requests welcome, we store the files in the `/attachments` sub-folder.
 
