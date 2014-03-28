@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ 
+<marker id="a" markerWidth="1000" markerHeight="1000" refX="0" refY="0"> 
+ <a xlink:href="http://google.com"> 
+  <set attributeName="xlink:href" to="javascript:alert(1)" begin="1s" /> 
+  <rect width="1000" height="1000" fill="white"/> 
+ </a> 
+</marker>
+ 
+</svg>

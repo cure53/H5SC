@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>HTML5 Security Cheatsheet</title>
+        <!-- major includes -->
+        <script type="text/javascript" src="http://html5security.googlecode.com/svn/trunk/items.json"></script>
+        <script type="text/javascript" src="http://html5security.googlecode.com/svn/trunk/categories.json"></script>
+        <script type="text/javascript" src="http://html5security.googlecode.com/svn/trunk/payload.json"></script>
+        <script type="text/javascript" src="http://html5security.googlecode.com/svn/trunk/html/scripts/jquery.js"></script>
+        <script type="text/javascript" src="http://html5security.googlecode.com/svn/trunk/html/scripts/import.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles/basic.css" />
+    </head>
+    <body>
+        <h1>HTML5 Security Cheatsheet<small>What your browser does when you look away...</small></h1>
+        <div id="content"><!-- data will go here --></div>
+		<div id="sidebar">
+		    <div id="languages">
+                <a rel="en" href=""><img src="images/en.png" alt="english" /></a>
+                <a rel="ja" href=""><img src="images/ja.png" alt="japanese" /></a>
+                <a rel="ru" href=""><img src="images/ru.png" alt="russian" /></a>
+                <a rel="cs" href=""><img src="images/cs.png" alt="czech" /></a>
+                <a rel="tr" href=""><img src="images/tr.png" alt="turkish" /></a>
+				<a rel="cn" href=""><img src="images/cn.png" alt="chinsese" /></a>
+            </div>
+		    <input type="text" accesskey="s" tabindex="1" id="search" placeholder="Search" />
+            <span class="clear"></span>
+            <!-- navi will go here -->
+        </div>
+        <div id="templates" style="display:none">
+            <!-- invisible templates for the JSON data -->
+            <div id="item_template">
+                <div class="item">
+                    <h4 class="name">%name%</h4><p class="description">%desription%</p>
+                    <code class="data">%data%</code><p class="howtofix">%howtofix%</p>
+                    <code class="attachment"></code>
+                    <ul class="browsers"></ul><ul class="tags"></ul><ul class="urls"></ul>
+                    <dfn class="reporter">%reporter%</dfn>
+                 </div>
+            </div>
+            <ul id="category_template"></ul>
+            <ul id="navigation_template"></ul>	
+        </div>
+        <div id="offline" style="display:none">Offline Mode</div>
+        <noscript>Please enable JavaScript</noscript>
+    </body>
+</html>

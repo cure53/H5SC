@@ -1,0 +1,1 @@
+<?xml version="1.0" ?><bindings xmlns="http://www.mozilla.org/xbl"><binding id="xss"><implementation><constructor><![CDATA[alert(1)]]></constructor></implementation></binding></bindings>

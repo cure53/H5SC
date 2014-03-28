@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.w3.org/1999/xhtml" target="_top" action="javascript:alert(1)">
+<input value="XXX" type="submit"/>
+</form>

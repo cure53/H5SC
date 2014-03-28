@@ -1,0 +1,1 @@
+{"xss":alert(1), "url": "javascript:alert(1)"}

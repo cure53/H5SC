@@ -1,0 +1,1 @@
+<!ENTITY x "&#x3C;html:img&#x20;src='x'&#x20;xmlns:html='http://www.w3.org/1999/xhtml'&#x20;onerror='alert(1)'/&#x3E;">

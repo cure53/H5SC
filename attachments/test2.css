@@ -1,0 +1,4 @@
+</style><script>alert(1)</script>
+<iframe src="javascript:alert(2)"></iframe>
+<img src="x" onerror="alert(3)"><style>
+<svg onload="alert(4)">

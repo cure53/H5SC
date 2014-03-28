@@ -1,0 +1,1 @@
+<?xml version="1.0"?><Schema name="x" xmlns="urn:schemas-microsoft-com:xml-data"><ElementType name="img"><AttributeType name="src" required="yes" default="x"/><AttributeType name="onerror" required="yes" default="alert(1)"/><attribute type="src"/><attribute type="onerror"/></ElementType></Schema>

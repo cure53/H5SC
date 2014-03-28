@@ -1,0 +1,3 @@
+<!ELEMENT x (y)>
+<!ELEMENT y (#PCDATA)>
+<!ENTITY js "&lt;img src='x' onerror='alert(1)' /&gt;">

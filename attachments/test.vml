@@ -1,0 +1,1 @@
+<xml><rect style="height:100%;width:100%" id="xss" onmouseover="alert(1)" strokecolor="white" strokeweight="2000px" filled="false" /></xml>

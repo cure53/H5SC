@@ -1,0 +1,5 @@
+﻿<form xmlns="http://www.w3.org/1999/xhtml" target="_top" action="javascript:alert(1)">
+<!--  this file can be crossdomain if "action" attribute refers to an external file -->
+<meta http-equiv="refresh" content="1;URL=test5.svg"/>
+<input type="submit" autofocus="autofocus"/>
+</form>

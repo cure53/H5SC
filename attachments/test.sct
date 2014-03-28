@@ -1,0 +1,4 @@
+<SCRIPTLET>
+   <IMPLEMENTS Type="Behavior"></IMPLEMENTS>
+   <SCRIPT Language="javascript">alert(1)</SCRIPT>
+</SCRIPTLET>
