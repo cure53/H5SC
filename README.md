@@ -1,7 +1,7 @@
 HTML5 Security Cheatsheet
 ====
 
-This is the new home of the H5SC or HTML5 Security Cheatsheet. Here you will find two things:
+This is the new home of the H5SC or HTML5 Security Cheatsheet. Here you will find three things:
 
  * A collection of HTML5 related XSS attack vectors
  * A set of useful files for XSS testing
@@ -52,5 +52,6 @@ The H5SC currently has two hidden features
 
  * An RSS mode to test feed readers: https://html5sec.org/rss
  * A JavaScript function to return all vectors as string, isolated and numbered: Go here and execute `vectors()`
+ * A useful search API via GET. Want all vectors related to `innerHTML`? Open https://html5sec.org/?innerHTML
 
  
