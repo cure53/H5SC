@@ -173,10 +173,10 @@
         })();
         // search functionality
         (function(){
-            $('ul.tags li, ul.browsers li').live('click', function(){
+            $('ul.tags li, ul.browsers li').click(function(){
                 $('#search').attr('value', $(this).html()).keyup();        
             });
-            $('#search').live('keyup', function(){
+            $('#search').keyup(function(){
                 var term = $('#search').attr('value');
                 term = sanitize(term.replace(/([\[\]\(\\)\{\}\+\-])/gm, '\\$1'));
                 if(term) {
@@ -196,10 +196,10 @@
                     
                 } else {$('div.item').show()}
             });
-            $('#search').live('dblclick', function(){
+            $('#search').dblclick(function(){
                 $(this).attr('value', '').keyup();
             }); 
-            $('#sidebar a').live('click', function(){
+            $('#sidebar a').click(function(){
                 $('#search').attr('value', '').keyup();
             }); 
             // enable direct jumps via hash url
@@ -210,7 +210,7 @@
         })();
         // language switch
         (function(){
-            $('#languages a').live('click', function(){
+            $('#languages a').click(function(){
                 document.cookie='lang='+$(this).attr('rel');
             });
         })();
