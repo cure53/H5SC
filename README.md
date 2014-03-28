@@ -7,11 +7,11 @@ This is the new home of the H5SC or HTML5 Security Cheatsheet. Here you will fin
  * A set of useful files for XSS testing
  * A set of formerly hidden features useful for XSS testing
 
-# The XSS Vectors
+## The XSS Vectors
 
 The collection of XSS vectors can be found here: https://html5sec.org/
 
-# Useful files
+## Useful Files
 
 We published a list of files useful for XSS testing in various situations. Currently the following files are available:
 
@@ -46,7 +46,7 @@ We published a list of files useful for XSS testing in various situations. Curre
 
 Pull requests welcome, we store the files in the `/attachments` subfolder.
 
-# Hidden Features
+## Hidden Features
 
 The H5SC currently has two hidden features
 
