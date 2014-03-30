@@ -56,5 +56,6 @@ The H5SC currently has three "hidden" features
  * A useful search API via GET
   * Want all vectors related to `innerHTML`? Open https://html5sec.org/?innerHTML
   * Want to link a specific vector? Open https://html5sec.org/#123
-
+ * A redirect resolving to a URL containing XSS payload: https://html5sec.org/r
+ * More to come soon!
  
