@@ -4870,6 +4870,44 @@ return [
         },
         'tags'      : ['html5', 'svg', 'from', 'inline', 'xss', 'passive'],
         'reporter'  : '.mario'
-    }    
+    },
+    { /* ID 138 - Executing JavaScript via cross-origin HTML imports */
+        'id'        : 138,
+        'category'  : 'html5',
+        'name'      : {
+            'en'    : 'Executing JavaScript via cross-origin HTML imports',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'data'      : '<link rel="import" href="%svg_path%" />',
+        'description' : {
+            'en'    : 'Google Chrome Canary already supports HTML Imports. They allow to fetch resources from arbitrary origins (as long as the Access-Control-Origin headers are set properly) and inject it into the requesting DOM. Currently, only Chrome supports the feature and it\'s still hidden behind a flag. It is however to be expected to be supported by all major browsers.',
+            'ja'    : '',
+            'ru'    : '', 
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'urls'      : [
+                        'http://www.w3.org/TR/html-imports/',
+                        'http://html5sec.org/cspbypass/'
+                    ],
+        'howtofix'  : {
+            'en'    : 'Make sure that HTML imports are limited to the same origin. Avoid permitting users to have <link> tags in user-generated rich-text as they can now directly execute JavaScript without any user interaction.',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'browsers'  : {
+            'chrome':   ['33.0', '34.0', '35.0']
+        },
+        'tags'      : ['html5', 'imports', 'link', 'rel', 'xss', 'active'],
+        'reporter'  : '.mario'
+    }  
 ]
 }));
