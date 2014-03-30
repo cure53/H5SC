@@ -32,6 +32,7 @@ return {
     'js_utf7_alert_1'   : '&ADz&AGn&AG0&AEf&ACA&AHM&AHI&AGO&AD0&AGn&ACA&AG8Abg&AGUAcgByAG8AcgA9AGEAbABlAHIAdAAoADEAKQ&ACAAPABi',
     'js_utf7_alert_2'   : '&<script&S1&TS&1>alert&A7&(1)&R&UA;&&<&A9&11/script&X&>',
     'js_base64_alert'   : 'PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==',
+    'html_alert_encoded': '&lt;img src&euqals;x:x onerror&euqals;alert&lpar;1&rpar;&gt;'
     'svg_path'          : 'test.svg',
     'svg_path_2'        : 'test2.svg',
     'svg_path_3'        : 'test5.svg',

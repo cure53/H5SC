@@ -4825,7 +4825,7 @@ return [
         },
         'browsers'  : {
             'opera': ['12.0'],
-            'chrome': ['22.0', '23.0', '24.0', '25.0']
+            'chrome': ['22.0', '23.0', '24.0', '25.0', 'latest']
         },
         'tags'      : ['html5', 'dirname', 'privacy', 'http', 'form', 'infoleak'],
         'reporter'  : '.mario'
@@ -4863,9 +4863,9 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-        	'firefox' : ['25.0', '27.0'],
+        	'firefox' : ['25.0', '27.0', '28.0'],
             'opera':  	['15.0'],
-            'chrome': 	['30.0', '32.0'],
+            'chrome': 	['30.0', '32.0', '35.0'],
             'safari': 	[ '5.0', '6.0']
         },
         'tags'      : ['html5', 'svg', 'from', 'inline', 'xss', 'passive'],
@@ -4904,10 +4904,50 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'chrome':   ['33.0', '34.0', '35.0']
+            'chrome': ['33.0', '34.0', '35.0']
         },
         'tags'      : ['html5', 'imports', 'link', 'rel', 'xss', 'active'],
         'reporter'  : '.mario'
-    }  
+    },
+    { /* ID 139 - Executing JavaScript via "srcdoc" attribute in Iframes */
+        'id'        : 139,
+        'category'  : 'html5',
+        'name'      : {
+            'en'    : 'Executing JavaScript via "srcdoc" attribute in Iframes',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'data'      : '<iframe srcdoc="%html_alert_encoded%" />',
+        'description' : {
+            'en'    : 'HTML5 specifies a "srcdoc" attribute for Iframes. This attribute, quite similar to data URIs, is capable of hosting HTML text to be rendered by the browser as the content of the Iframe. The pseudo-document created by the "srcdoc" attribute has full access to the hosting domain, although it runs in an artificial origin. This attribute should if at all only be used in combination with the Iframe Sandbox.',
+            'ja'    : '',
+            'ru'    : '', 
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'urls'      : [
+                        'http://www.whatwg.org/specs/web-apps/current-work/multipage/the-iframe-element.html#attr-iframe-srcdoc',
+                        'https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe'
+                    ],
+        'howtofix'  : {
+            'en'    : 'Make sure to use "srcdoc" only in combination with the Iframe Sandbox. Otherwise, XSS attacks might slip through existing filters\' rules as the payload can be HTML encoded.',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'browsers'  : {
+            'firefox' : ['26.0', '27.0', '28.0'],
+            'chrome': ['20.0', '34.0', '35.0'],
+            'opera' : ['15.0']
+        },
+        'tags'      : ['html5', 'iframe', 'sandbox', 'srcdoc', 'xss', 'active', 'entities'],
+        'reporter'  : '.mario'
+    }      
 ]
 }));
