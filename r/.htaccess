@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^([^/]*)(/(?:[^/]*))? index.php?payload=$1&code=$2 [L]
