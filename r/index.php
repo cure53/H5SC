@@ -6,7 +6,7 @@ $payloads = array(
     'script'     => $base.'/<script>alert(1)</script>/',
     'javascript' => 'javascript:alert(1)',
     'data'       => 'data:text/html;base64,PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==',
-    'jar'        => 'jara:javascript:alert(1)'
+    'jar'        => 'jar:javascript:alert(1)'
 );
 
 $statuses = array(
