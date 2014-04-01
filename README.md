@@ -56,6 +56,11 @@ The H5SC currently has three "hidden" features
  * A useful search API via GET
   * Want all vectors related to `innerHTML`? Open https://html5sec.org/?innerHTML
   * Want to link a specific vector? Open https://html5sec.org/#123
- * A redirect resolving to a URL containing XSS payload: https://html5sec.org/r
+ * A redirect API resolving to a URL containing XSS payload
+  *  Data URI, no special status: https://html5sec.org/r/data/
+  *  Data URI, status code `307`: https://html5sec.org/r/data/307
+  *  JavaScript URI, status code `301`: https://html5sec.org/r/javascript/301
+  *  Supported status codes are: `301`, `302`, `303`, `307`, `308`, `999`
+  *  Supported schemes are: `data`, `javascript`, `jar`, `script` (redirecting to https://html5sec.org/%3cscript>alert(1)%3c/script>/)
  * More to come soon!
  
