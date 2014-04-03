@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^(\+[0-9]*)/? index.php?addtime=$1 [L]
+RewriteRule ^([0-9]+)/? index.php?unixtime=$1 [L]
