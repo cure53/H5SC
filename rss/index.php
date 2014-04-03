@@ -1,4 +1,27 @@
 <?php
+if(array_key_exists('addtime', $_GET))
+{
+	header('Content-Type: text/plain');
+	if(strlen($_GET['addtime']) <= 1)
+		echo time() + 300;
+	else
+		echo time() + intval(substr($_GET['addtime'], 1));
+}
+else if(time() < $_GET['unixtime'])
+{
+	header('Content-Type: application/rss+xml; charset=UTF-8');
+	echo <<<EOT
+<rss version="2.0">
+<channel>
+<title>HTML5 Security Cheatsheet++ for RSS</title>
+<link>https://html5sec.org/rss/</link>
+<description>What your feedreader does when you..</description>
+</channel>
+</rss>
+EOT;
+}
+else
+{
 header('Content-Type: application/rss+xml; charset=UTF-8');
 echo <<<EOT
 <?xml version="1.0" encoding="UTF-8"?>
@@ -64,6 +87,8 @@ EOT;
     }
     fclose($handle);
 }
+
+echo '</channel>
+</rss>';
+} //else
 ?>
-</channel>
-</rss>
