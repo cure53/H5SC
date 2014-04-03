@@ -51,8 +51,8 @@ Pull requests welcome, we store the files in the `/attachments` sub-folder.
 
 The H5SC currently has three "hidden" features
 
- * A RSS mode to test feed readers: https://html5sec.org/rss
-  * `/rss/+/` gives a unix timestamp 300 seconds in future (for easy of use)
+ * An RSS mode to test feed readers: https://html5sec.org/rss
+  * `/rss/+/` gives a unix timestamp 300 seconds in future (for ease use)
   * `/rss/+123/` gives a unix timestamp 123 seconds in future
   * `/rss/1234/` will serve a minimal rss feed until unix time is 1234. 
  * A JavaScript function to return all vectors as string, isolated and numbered: Go [here](https://html5sec.org/) and execute `vectors()`
