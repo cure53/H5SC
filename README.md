@@ -55,7 +55,7 @@ The H5SC currently has three "hidden" features
   * `/rss/+/` gives a unix timestamp 300 seconds in future (for easy of use)
   * `/rss/+123/` gives a unix timestamp 123 seconds in future
   * `/rss/1234/` will serve a minimal rss feed until unix time is 1234. 
- * A JavaScript function to return all vectors as string, isolated and numbered: Go here and execute `vectors()`
+ * A JavaScript function to return all vectors as string, isolated and numbered: Go [here](https://html5sec.org/) and execute `vectors()`
  * All H5SC vectors in one text file for easy copy & paste
  * A useful search API via GET
   * Want all vectors related to `innerHTML`? Open https://html5sec.org/?innerHTML
