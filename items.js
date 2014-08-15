@@ -4948,6 +4948,45 @@ return [
         },
         'tags'      : ['html5', 'iframe', 'sandbox', 'srcdoc', 'xss', 'active', 'entities'],
         'reporter'  : '.mario'
+    },
+    { /* ID 140 - Executing JavaScript using ES6 Template Strings  */
+        'id'        : 140,
+        'category'  : 'javascript',
+        'name'      : {
+            'en'    : 'Executing JavaScript using ES6 Template Strings',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'data'      : '<script>\r\n%js_alert_template%\r\nvar something = `abc${%js_alert%}def`\r\n``.constructor.constructor`%js_esc_template%```</script>',
+        'description' : {
+            'en'    : 'ES6 specifies a new language feature called "Template Strings" (often also referred to as "Quasi Literals" alongside multi-line strings and others). This allows to execute arbitrary JavaScript code without using parenthesis but back-ticks instead. Inside back-tick delimited strings, placeholders such as ${} can wrap executable code.',
+            'ja'    : '',
+            'ru'    : '', 
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'urls'      : [
+                        'http://tc39wiki.calculist.org/es6/template-strings/',
+                        'https://html5sec.org/es6/template',
+                        'http://wiki.ecmascript.org/doku.php?id=harmony:quasis'
+                    ],
+        'howtofix'  : {
+            'en'    : 'Make sure that your IDS, filter and other protective systems are aware of the fact, that back-ticks (U+0060) are now capable of initiating execution of methods and functions in JavaScript. Further make sure, that symbols such as ${} cannot be injected into existing template and multi-line strings.',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'browsers'  : {
+            'firefox' : ['34.0']
+        },
+        'tags'      : ['es6', 'javascript', 'backtick', 'template'],
+        'reporter'  : '.mario'
     }      
 ]
 }));

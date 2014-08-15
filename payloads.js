@@ -22,6 +22,8 @@ return {
     'js_alert_3'        : 'alert(3)',
     'js_alert_only'     : 'alert',
     'js_alert_entities' : '&#x61;l&#x65;rt&#40;1)',
+    'js_alert_template' : 'alert`1`',
+    'js_esc_template'   ' 'alert\\`1\\`',
     'js_write'          : 'write(1)',
     'js_write_2'        : 'write(2)',
     'js_write_only'     : 'write',
