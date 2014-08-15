@@ -4960,7 +4960,7 @@ return [
             'de'    : '',
             'zh'    : ''
         },
-        'data'      : '<script>\r\n%js_alert_template%\r\nvar something = `abc${%js_alert%}def`\r\n``.constructor.constructor`%js_esc_template%```\r\n</script>',
+        'data'      : '<script>\r\n%js_alert_template%;\r\nvar something = `abc${%js_alert%}def`;\r\n``.constructor.constructor`%js_esc_template%```;\r\n</script>',
         'description' : {
             'en'    : 'ES6 specifies a new language feature called "Template Strings" (often also referred to as "Quasi Literals" alongside multi-line strings and others). This allows to execute arbitrary JavaScript code without using parenthesis but back-ticks instead. Inside back-tick delimited strings, placeholders such as ${} can wrap executable code.',
             'ja'    : '',
