@@ -5026,6 +5026,44 @@ return [
         },
         'tags'      : ['es6', 'javascript', 'backtick', 'template', 'svg'],
         'reporter'  : '.mario'
+    },
+    { /* ID 142 - HTML5 <picture> element and "srcset" attributes  */
+        'id'        : 142,
+        'category'  : 'html5',
+        'name'      : {
+            'en'    : 'HTML5 <picture> element and "srcset" attributes',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'data'      : '<picture><source srcset="x"><img onerror="%js_alert%"></picture>\r\n\r\n<picture><img srcset="x" onerror="%js_alert%"></picture>\r\n\r\n<img srcset=",,,,,x" onerror="%js_alert%">',
+        'description' : {
+            'en'    : 'HTML5 offers the <picture> element for responsive and accessible images. The <picture> element essentially wraps <source> and <img> elements and provides a way to offer alternative content. Novel here is that the "srcset" attribute allows to trigger load events. This is likely to bypass existing WAF systems.',
+            'ja'    : '',
+            'ru'    : '', 
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'urls'      : [
+                        'http://www.whatwg.org/specs/web-apps/current-work/multipage/embedded-content.html#the-picture-element',
+                        'http://responsiveimages.org/'
+                    ],
+        'howtofix'  : {
+            'en'    : 'In case a black-list based XSS filter is in use, make sure that the combination of event handler and "srcset" attribute is detected by it as well.',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'browsers'  : {
+            'chrome' : ['38.0']
+        },
+        'tags'      : ['picture', 'srcset', 'html5', 'accessibility'],
+        'reporter'  : '.mario'
     }    
 ]
 }));
