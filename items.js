@@ -1919,7 +1919,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', '9.0']
+            'internet explorer': ['5.5', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'javascript', 'behavior', 'scriptlet', 'internet explorer', 'style', 'css', 'sct'],
         'reporter'   : '.mario'
@@ -1958,7 +1958,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', '9.0']
+            'internet explorer': ['5.5', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'javascript', 'behavior', 'internet explorer', 'style', 'css', 'data island'],
         'reporter'   : '.mario'
@@ -1990,9 +1990,9 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['10.0', '10.10', 'end', 'mobile'],
-            'chrome': ['4.0', '5.0', '6.0', 'end'],
-            'firefox': ['1.x', '2.0', '3.0', '3.0.19', 'end']
+            'opera': ['10.0', '10.10'],
+            'chrome': ['4.0', '6.0'],
+            'firefox': ['1.x', '3.0.19']
         },
         'tags'       : ['xss', 'javascript', 'json', '__definesetter__', 'object', 'prototype'],
         'reporter'   : '.mario'
@@ -2024,9 +2024,9 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['10.5', '11.0', '12.0'],
-            'chrome': ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '25.0'],
-            'firefox': ['4.0', '15.0']
+            'opera': ['10.5', 'latest'],
+            'chrome': ['4.0', 'latest'],
+            'firefox': ['4.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'video', 'source', 'html5', 'opera', 'chrome', 'audio'],
         'reporter'   : '.mario'
@@ -2058,8 +2058,8 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox': ['3.5', '3.6', '4.0', '15.0'], 
-            'internet explorer' :  ['9.0', '10.0']
+            'firefox': ['3.5', 'latest'], 
+            'internet explorer' :  ['9.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'video', 'source', 'html5', 'firefox', 'audio'],
         'reporter'   : '.mario'
@@ -2091,9 +2091,9 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox': ['3.5', '3.6', '3.6.28', 'end'],
-            'chrome': ['4.0', '5.0', 'end'],
-            'safari': ['3.0', '4.0', '4.0.3', 'end']
+            'firefox': ['3.5', '3.6.28'],
+            'chrome': ['4.0', '5.0'],
+            'safari': ['3.0', '4.0.3']
         },
         'tags'       : ['xss', 'javascript', 'nesting', 'script', 'parser', 'regex'],
         'reporter'   : '.mario, Kyo, sirdarckcat'
@@ -2125,7 +2125,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox': ['1.5', '2.0', '3.0', '3.6.28', 'end']
+            'firefox': ['1.5', '3.6.28']
         },
         'tags'       : ['xss', 'javascript', 'e4x', 'script', 'parser', 'regex'],
         'reporter'   : '.mario'
@@ -2157,7 +2157,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', 'end']
+            'internet explorer': ['6.0', '8.0 (unpatched)']
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'script', 'dom', 'innerhtml'],
         'reporter'   : 'hasegawayosuke'
@@ -2190,11 +2190,11 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox': ['2.x', '3.0', '4.0', '15.0'],
-            'opera': ['9.x', '10.0', '11.0', '12.0', 'mobile'],
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0', '10.0'],
-            'chrome' : ['5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari' : ['4.0', '5.0', '5.1.7']
+            'firefox': ['2.x', 'latest'],
+            'opera': ['9.x', 'latest'],
+            'internet explorer': ['6.0', 'latest'],
+            'chrome' : ['5.0', 'latest'],
+            'safari' : ['4.0', 'latest']
         },
         'tags'       : ['trick', 'css', 'quirks mode', 'obfuscation', 'opera', 'firefox', 'internet explorer', 'chrome', 'safari', 'fuzzing', 'quirks mode'],
         'reporter'   : 'Gareth, hasegawayosuke, LeverOne, .mario, RSnake, sirdarckcat'
