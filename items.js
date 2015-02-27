@@ -41,7 +41,7 @@ return [
         'urls'    : ['http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#attr-fs-formaction'],
         'howtofix'   : {
             'en' : 'Don\'t allow users to submit markup containing "form" and "formaction" attributes or transform them to bogus attributes. Avoid "id" attributes for forms as well as submit buttons.',
-	    'ja' : '\u0022form\u0022\u3068\u0022formaction\u0022\u5c5e\u6027\u3092\u542b\u3080\u8981\u7d20\u3092\u30e6\u30fc\u30b6\u306b\u5165\u529b\u3055\u305b\u306a\u3044\u3001\u3042\u308b\u3044\u306f\u305d\u308c\u3089\u306e\u5c5e\u6027\u3092\u7121\u52b9\u306a\u5024\u306b\u5909\u63db\u3059\u308b\u3053\u3068\u3002\u0022id\u0022\u5c5e\u6027\u306fform\u3060\u3051\u3067\u306a\u304fsubmit\u30dc\u30bf\u30f3\u306b\u3064\u3044\u3066\u3082\u5bfe\u5fdc\u3059\u308b\u3053\u3068\u3002',
+        'ja' : '\u0022form\u0022\u3068\u0022formaction\u0022\u5c5e\u6027\u3092\u542b\u3080\u8981\u7d20\u3092\u30e6\u30fc\u30b6\u306b\u5165\u529b\u3055\u305b\u306a\u3044\u3001\u3042\u308b\u3044\u306f\u305d\u308c\u3089\u306e\u5c5e\u6027\u3092\u7121\u52b9\u306a\u5024\u306b\u5909\u63db\u3059\u308b\u3053\u3068\u3002\u0022id\u0022\u5c5e\u6027\u306fform\u3060\u3051\u3067\u306a\u304fsubmit\u30dc\u30bf\u30f3\u306b\u3064\u3044\u3066\u3082\u5bfe\u5fdc\u3059\u308b\u3053\u3068\u3002',
             'ru' : 'Не разрешайте пользовательскую разметку, содержащую атрибуты form и formaction или неправильные значения этих атрибутов. Избегайте атрибут id в формах, как и элементы ввода submit типа.',
             'cs' : 'Nedovolte uživatelům vložit kód obsahující atributy "form" a "formaction" či jejich "zkomolené" tvary. Vyhněte se atributu "id" u formulářů i u odesílacích tlačítek.',
             'de' : '',
@@ -49,10 +49,11 @@ return [
             'zh' : '不要让用户提交包含 "form" 和 "formaction"属性的标签.避免在form中出现id属性及提交按钮.'
         },
         'browsers'   : {
-            'firefox' : ['4.0', '15.0'],
-            'opera': ['10.5', '11.0', '12.0', 'mobile'], 
-            'chrome': ['10.0', '23.0'],
-            'safari' : ['4.0.4', '5.1.7']
+            'firefox' : ['4.0', 'latest'],
+            'opera': ['10.5', 'latest'], 
+            'chrome': ['10.0', 'latest'],
+            'safari' : ['4.0.4', 'latest'],
+            'internet explorer' : ['10', 'latest (inside form element)']
         },
         'tags'       : ['xss', 'html5', 'opera', 'chrome', 'firefox', 'formaction', 'javascript', 'button'],
         'reporter'   : '.mario'
@@ -91,7 +92,7 @@ return [
         },
         'browsers'   : {
             'firefox': [
-                '2.x', '3.5', '3.6', '3.6.28', 'end'
+                '2.x', '3.6.28'
             ]
         },
         'tags'       : ['xss', 'utf7', 'firefox', 'charset'],
@@ -130,7 +131,7 @@ return [
         },          
         'browsers'   : {
             'firefox': [
-                '2.x', '3.5', '3.6', '3.6.28', 'end'
+                '2.x', '3.6.28'
             ]
         },
         'tags'       : ['xss', 'utf7', 'firefox', 'charset'],
@@ -169,7 +170,7 @@ return [
         },          
         'browsers'   : {
             'firefox': [
-                '3.5', '3.6', '15.0'
+                '3.5', '15.0'
             ]
         },
         'tags'       : ['xss', 'dom', 'firefox', 'worker', 'self-inclusion', 'e4x'],
@@ -208,7 +209,7 @@ return [
         },          
         'browsers'   : {
             'firefox': [
-                '2.x', '3.x', '4.0', '15.0'
+                '2.x', '34.0'
             ]
         },
         'tags'       : ['xss', 'dom', 'firefox', 'crypto', 'eval', 'csp', 'proprietary'],
@@ -247,7 +248,7 @@ return [
         },          
         'browsers'   : {
             'firefox': [
-                '1.x', '2.x', '3.x', '3.5', '3.6', '3.6.28', 'end'
+                '1.x', '3.6.28'
             ]
         },
         'tags'       : ['xss', 'dom', 'firefox', 'setter', 'proprietary'],
@@ -278,7 +279,7 @@ return [
         'urls'    : ['http://www.w3.org/Bugs/Public/show_bug.cgi?id=9602','http://www.whatwg.org/specs/web-apps/current-work/multipage/association-of-controls-and-forms.html#autofocusing-a-form-control'],
         'howtofix'   : {
             'en' : 'User submitted markup should not contain "autofocus" attributes.', 
-	    'ja' : '\u30e6\u30fc\u30b6\u306e\u5165\u529b\u3057\u305fHTML\u65ad\u7247\u306b \u0022autofocus\u0022 \u5c5e\u6027\u304c\u542b\u307e\u308c\u306a\u3044\u3088\u3046\u306b\u3059\u308b\u3053\u3068\u3002',
+        'ja' : '\u30e6\u30fc\u30b6\u306e\u5165\u529b\u3057\u305fHTML\u65ad\u7247\u306b \u0022autofocus\u0022 \u5c5e\u6027\u304c\u542b\u307e\u308c\u306a\u3044\u3088\u3046\u306b\u3059\u308b\u3053\u3068\u3002',
             'ru' : 'Пользовательская разметка не должна содержать атрибут autofocus.',
             'cs' : 'Uživatelsky vkládaný kód by neměl obsahovat atribut "autofocus".',
             'de' : '',
@@ -286,11 +287,11 @@ return [
             'zh' : '检测用户提交的内容中是否含有"autofocus"属性'
         },          
         'browsers'   : {
-		    'firefox' : ['4.0', '15.0'],
-            'opera': ['9.0', '10.0', '11.0', '12.0'],
-            'safari' : ['4.0', '5.0', '5.1.7'],
-            'chrome': ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'internet explorer': ['10.0']
+            'firefox' : ['4.0', 'latest'],
+            'opera': ['9.0', 'latest'],
+            'safari' : ['4.0', 'latest'],
+            'chrome': ['4.0', 'latest'],
+            'internet explorer': ['10.0', 'latest']
         },
         'tags'       : ['xss', 'autofocus', 'chrome', 'opera'],
         'reporter'   : 'Gareth'
@@ -328,8 +329,8 @@ return [
             'zh' : '检测用户提交的内容中是否含有"autofocus"属性'
         },    
         'browsers'   : {
-            'safari' : ['4.0', '5.0', '5.1.7'],
-            'chrome': ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0']
+            'safari' : ['4.0', 'latest'],
+            'chrome': ['4.0', 'latest']
         },
         'tags'       : ['xss', 'autofocus', 'blur', 'chrome', 'safari'],
         'reporter'   : '.mario'
@@ -356,7 +357,7 @@ return [
             'de' : '',
             'tr' : 'Opera keyfi olarak eklenen HTML öğeleri için "link sources" atanmasına izin vermektedir - tıklanabilir yapılarak JavaScript çalıştırılabilir',
             'zh' : 'Opera允许给任何HTML元素设置link sources,它们将可以点击和执行javascript.注意:opera 11要求是<a>标签,早期版本任意'
-		},
+        },
         'urls'    : ['http://www.aptana.com/reference/html/api/CSS.field.-o-link-source.html', 'https://hackvertor.co.uk/hvurl/3c'],
         'howtofix'   : {
             'en' : '',
@@ -368,7 +369,7 @@ return [
         },          
         'browsers'   : {
             'opera': [
-                '8.0', '9.0', '10.0', '11.0', '12.0', 'mobile'
+                '8.0', '12.0 (limited)'
             ]
         },
         'tags'       : ['xss', 'css', 'link-source', 'opera', 'proprietary'],
@@ -407,7 +408,7 @@ return [
             'zh' : '确保VIDEO的poster属性是相对URI、http URI和MIME-typed正确的data URI'
         },            
         'browsers'   : {
-            'opera': ['10.5', '11.00', '11.01', 'end']
+            'opera': ['10.5', '11.01']
         },
         'tags'       : ['xss', 'poster', 'video', 'opera', 'html5'],
         'reporter'   : '.mario'
@@ -445,11 +446,11 @@ return [
             'zh' : '在上传时不能把SVG当图片处理,因为它可以包含任意HTML,且能被浏览器解析'
         },                        
         'browsers'   : {
-            'opera': ['10.0', '11.0', '12.0'],
-            'chrome': ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'firefox': ['3.0', '3.5', '3.6', '3.6.28', 'end'],
+            'opera': ['10.0', '12.0'],
+            'chrome': ['4.0', '35.0'],
+            'firefox': ['3.0', '3.6.28'],
             'safari' : ['5.0', '5.1.7'],
-            'internet explorer': ['9.0']      
+            'internet explorer': ['9.0', 'latest']      
         },
         'tags'       : ['xss', 'svg', 'onload', 'opera', 'firefox', 'chrome', 'internet explorer'],
         'reporter'   : '.mario'
@@ -486,10 +487,10 @@ return [
             'tr' : ''
         },          
         'browsers'   : {
-		    'firefox' : ['4.0', '15.0'],
-            'opera': ['9.0', '10.0', '11.0', '12.0'],
-            'safari' : ['4.0', '5.0', '5.1.7'],
-            'chrome': ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0']
+            'firefox' : ['4.0', 'latest'],
+            'opera': ['9.0', 'latest'],
+            'safari' : ['4.0', 'latest'],
+            'chrome': ['4.0', 'latest']
         },
         'tags'       : ['xss', 'autofocus', 'scroll', 'chrome', 'opera'],
         'reporter'   : '.mario'
@@ -527,7 +528,7 @@ return [
             'zh' : '不要允许用户提交的HTML中包含repeat或repeat 或repeat-start、repeat-end属性.如果有这需求可以验证他们的值是否过大.'
         },            
         'browsers'   : {
-            'opera': ['10.0', '10.10', 'end']
+            'opera': ['10.0', '10.10']
         },
         'tags'       : ['dos', 'repeat', 'template', 'webforms', 'opera', 'proprietary'],
         'reporter'   : '.mario'
@@ -602,7 +603,7 @@ return [
             'tr' : ''
         },          
         'browsers'   : {
-            'firefox': ['2.x', '3.0', '4.0', '11.0', 'end']
+            'firefox': ['2.x', '11.0']
         },
         'tags'       : ['xss', 'javascript', 'firefox', 'sharp', 'proprietary'],
         'reporter'   : '.mario'
@@ -640,7 +641,7 @@ return [
             'zh' : '不允许用户在提交的标签或CSS中含有behavior属性,HTML+TIME API提供了很多方法来执行Javascript,如果有可能,不用使用黑名单的方式处理HTML危险标签.'
         },            
         'browsers'   : {
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', 'end']
+            'internet explorer': ['5.5', '8.0']
         },
         'tags'       : ['xss', 'javascript', 'ie', 'behavior', 'html+time', 'onbegin'],
         'reporter'   : '.mario'
@@ -678,7 +679,7 @@ return [
             'zh' : '确保用户输入的没有包含XML stylesheets或者只允许能被<\\w+匹配的标签 - 因为这个向量需要<\\?\\w+才能匹配.黑名单是有可能被绕过的.'
         },            
         'browsers'   : {
-            'opera': ['9.x', '10.0', '10.10', 'end', 'mobile']
+            'opera': ['9.x', '10.10']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'xml', 'css', 'proprietary'],
         'reporter'   : '.mario'
@@ -716,11 +717,11 @@ return [
             'zh' : '确保过滤器或其它检测系统考虑了<script>或<style>和其它标签之间允许有Entities的事实.而不仅仅是属性.'
         },            
         'browsers'   : {
-            'opera': ['8.x', '9.0', '10.0', '11.0', '12.0'], 
-            'firefox' : ['1.x', '2.0', '3.0', '4.0', '15.0'], 
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-			      'safari' : ['5.0', '5.1.7'],
-			      'internet explorer': ['9.0']
+            'opera': ['8.x', 'latest'], 
+            'firefox' : ['1.x', 'latest'], 
+            'chrome': ['3.0', 'latest'],
+            'safari' : ['5.0', 'latest'],
+            'internet explorer': ['9.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'internet explorer', 'firefox', 'chrome', 'safari', 'xml', 'entity'],
         'reporter'   : '.mario'
@@ -756,7 +757,7 @@ return [
             'tr' : 'Kullanıcı girdisinde asla <META> taglarına karakter setlerinin tekrar ayarlarlanmalarını sağlaması için izin verilmemelidir. Bu durumda etkilenen karakter setleri ile çözümleme yapan web sitelerinin filtreleri Firefox için geçerli olan bu durumdan haberdar olmalıdır - &#60; (<) ve &#188; denktir. - aynı zamanda diğer karakterlerde.'
         },            
         'browsers'   : {
-            'firefox' : ['2.x', '3.0', '3.5', '3.6', '3.6.28', 'end']
+            'firefox' : ['2.x', '3.6.28']
         },
         'tags'       : ['x-mac-arabic', 'x-mac-farsi', 'x-mac-hebrew', 'firefox', 'charset'],
         'reporter'   : 'hasegawayosuke'
@@ -794,10 +795,10 @@ return [
             'zh' : '在用户可以注入脚本的情况下不要相信DOM,即便是DOM属性的访问.'
         },            
         'browsers'   : {
-            'opera': ['8.x', '9.0', '10.0', '11.0', '11.01', 'end'], 
-            'firefox' : ['1.x', '2.0', '3.0', '4.0', '15.0'], 
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '9.0', 'end'],
-            'safari': ['4.0', '5.0', '5.1.7']
+            'opera': ['8.x', '11.01'], 
+            'firefox' : ['1.x', '15.0'], 
+            'chrome': ['3.0', '9.0'],
+            'safari': ['4.0', '5.1.7']
         },
         'tags'       : ['javascript', 'opera', 'firefox', 'chrome', 'safari', 'ReferenceError', 'overwrite'],
         'reporter'   : '.mario'
@@ -834,7 +835,7 @@ return [
             'tr' : ''
         },          
         'browsers'   : {
-            'firefox' : ['3.5', '3.6', '4.0', '15.0'] 
+            'firefox' : ['3.5', 'latest'] 
         },
         'tags'       : ['xss', 'javascript', 'firefox', '__noSuchMethod__', 'proprietary'],
         'reporter'   : 'Gareth, .mario'
@@ -869,9 +870,9 @@ return [
             'tr' : 'Kullanıcı tanımlı markup\'lar "autofocus" özelliğini içermemelidir.'
         },            
         'browsers'   : {
-            'opera': ['9.0', '10.0', '11.0', '12.0'], 
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari' : ['5.0', '5.1.7']
+            'opera': ['9.0', 'latest'], 
+            'chrome': ['3.0', 'latest'],
+            'safari' : ['5.0', 'latest']
         },
         'tags'       : ['dos', 'javascript', 'opera', 'chrome', 'safari', 'autofocus', 'onblur', 'html5'],
         'reporter'   : 'Skyphire, Gareth, .mario'
@@ -907,7 +908,7 @@ return [
             'tr' : 'Kullanıcıların form, "onformchange" ve "onforminput" dahil herhangi bir markup sağlamadığından emin olun. <FORM> elemanlarına "id" özelliği uygulamayın.'
         },                        
         'browsers'   : {
-            'opera' : ['10.5', '11.0', '12.0', 'mobile'] 
+            'opera' : ['10.5', '12.0'] 
         },
         'tags'       : ['surveillance', 'javascript', 'opera', 'html5', 'onforminput', 'onformchange'],
         'reporter'   : 'Skyphire, .mario'
@@ -942,7 +943,7 @@ return [
             'tr' : 'Kullanıcı destekli CSS ve "markup"larda "behavior" özelliklerine izin vermeyin ve söz konusu tehlikeli HTML etiketleri için "blacklist"lere güvenmeyin. Çok bilinmeyen HTML+TIME API\'si Javascript çalıştırmak için kullanıcı etkileşimi gerektiren veya gerektirmeyen birçok egzotik yöntem sağlamaktadır. Mümkün olduğunca blacklist kullanımından kaçının.'
         },            
         'browsers'   : {
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', 'end']
+            'internet explorer': ['5.5', '8.0']
         },
         'tags'       : ['xss', 'javascript', 'ie', 'behavior', 'html+time', 'attributename', 'to', 'proprietary'],
         'reporter'   : '.mario'
@@ -977,7 +978,7 @@ return [
             'tr' : 'E4X geçerli XML ve sözü edilen noktalı vigül ayraçı içeren herhangi bir sayfa dahil edildiğinde tamamen tehlikeli olabilmekte. İşe yarar bir korunma için websiteleri mutlaka DOCTYPE ile uygulanmalıdır. Bitirici ayraçların birçok varyasyonları var - ki herbiri geçerli birer JavaScript olup belirtilen XML sayfa sayfası değil belirteç çalışacaktır (;1, ,1, ._, etc..)'
         },            
         'browsers'   : {
-            'firefox' : ['1.5', '2.0', '3.0', '4.0', '15.0']
+            'firefox' : ['1.5', '16.0']
         },
         'tags'       : ['xss', 'javascript', 'firefox', 'e4x', 'self-inclusion', 'proprietary'],
         'reporter'   : '.mario'
@@ -1012,7 +1013,7 @@ return [
             'tr' : 'Tüm sitelere tanımlanmış karakter setlerinin (UTF-8 gibi mesela) uygulandığından emin olun. Ayrıca gelen veri htmlentities() veya benzeri metotlar ile denetlenmeden önce UTF-7\'den mevcut karakter setine dönüştürülmelidir. Ayrıca önemli veriler içeren tüm web sitelerine DOCTYPE uygulanmalıdır.'
         },            
         'browsers'   : {
-            'firefox' : ['1.5', '2.0', '3.0', '4.0', '4.0.1', 'end']
+            'firefox' : ['1.5', '4.0.1']
         },
         'tags'       : ['xss', 'javascript', 'firefox', 'e4x', 'stealing', 'utf7', 'proprietary'],
         'reporter'   : '.mario'
@@ -1047,10 +1048,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'opera': ['8.x', '9.0', '10.0', '11.0', '11.64', 'end', 'mobile'],
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0', '10.0'],
-            'chrome': ['7.0', '23.0'],
-            'safari': ['4.0', '5.0', '5.1.7']  
+            'opera': ['8.x', '11.64']
         },
         'tags'       : ['xss', 'javascript', 'css', 'opera', 'attribute selectors', 'proprietary'],
         'reporter'   : '.mario'
@@ -1082,7 +1080,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', 'end']
+            'internet explorer': ['5.5', '8.0']
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'behavior', 'style', 'html+time', 'attributename', 'values', 'proprietary'],
         'reporter'   : 'LeverOne'
@@ -1114,7 +1112,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['8.0', '9.0', '10.0']
+            'internet explorer': ['8.0', '10.0']
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'css', 'style', 'expression', 'datauri', 'proprietary'],
         'reporter'   : '.mario'
@@ -1146,7 +1144,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['8.0', '9.0', '10.0']
+            'internet explorer': ['8.0', '10.0']
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'css', 'style', 'expression', 'datauri', 'proprietary'],
         'reporter'   : '.mario'
@@ -1178,11 +1176,11 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['5.0', '6.0', '7.0', '8.0', '9.0', '10.0'],
-            'opera': ['8.x', '9.0', '10.0', '11.0', '12.0', 'mobile'], 
-            'firefox' : ['1.x', '2.0', '3.0', '4.0', '15.0'], 
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari': ['3.0', '4.0', '5.0', '5.1.7']
+            'internet explorer': ['5.0', 'latest'],
+            'opera': ['8.x', 'latest'], 
+            'firefox' : ['1.x', 'latest'], 
+            'chrome': ['3.0', 'latest'],
+            'safari': ['3.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'frames', 'classic', 'html', 'onload'],
         'reporter'   : '.mario'
@@ -1214,8 +1212,8 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['6.0', 'end'],
-            'opera': ['8.x', '9.0', '10.0', '11.01', 'end', 'mobile'] 
+            'internet explorer': ['6.0'],
+            'opera': ['8.x', '11.01'] 
         },
         'tags'       : ['xss', 'javascript', 'background', 'classic', 'html', 'table'],
         'reporter'   : '.mario'
@@ -1248,9 +1246,11 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'firefox': ['3.6', '4.0', '15.0'], 
-            'safari' : ['5.0', '5.1.7'],
-            'chrome' : ['7.0', '8.0', '9.0', '10.0', '23.0']
+            'firefox': ['3.6', 'latest'], 
+            'safari' : ['5.0', 'latest'],
+            'chrome' : ['7.0', 'latest'],
+            'internet explorer' : ['10.0', 'latest'],
+            'opera' : ['10.0', 'latest']
         },
         'tags'       : ['xss', 'hijacking', 'css', 'pointer-events', 'firefox', 'safari', 'chrome'],
         'reporter'   : '.mario'
@@ -1289,7 +1289,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', '9.0'] 
+            'internet explorer': ['5.5', 'latest (in older docmode)'] 
         },
         'tags'       : ['xss', 'javascript', 'style', 'behavior', 'vml', 'internet explorer', 'proprietary'],
         'reporter'   : 'http://www.malware.com'
@@ -1322,7 +1322,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', '9.0'] 
+            'internet explorer': ['5.5', 'latest (in older docmode)'] 
         },
         'tags'       : ['xss', 'javascript', 'style', 'behavior', 'vml', 'internet explorer', 'proprietary'],
         'reporter'   : 'LeverOne'
@@ -1354,7 +1354,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', '9.0'] 
+            'internet explorer': ['5.5', 'latest (in older docmode)'] 
         },
         'tags'       : ['xss', 'javascript', 'style', 'behavior', 'anchorclick', 'internet explorer', 'proprietary'],
         'reporter'   : '.mario'
@@ -1386,11 +1386,11 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['5.0', '6.0', '7.0', '8.0', '9.0', '10.0'],
-            'opera': ['8.0', '9.0', '10.0', '11.0', '12.0', 'mobile'], 
-            'firefox' : ['1.0', '2.0', '3.0', '4.0', '15.0'], 
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari': ['3.0', '4.0', '5.0', '5.1.7']
+            'internet explorer': ['5.0', 'latest'],
+            'opera': ['8.0', 'latest'], 
+            'firefox' : ['1.0', 'latest'], 
+            'chrome': ['3.0', 'latest'],
+            'safari': ['3.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'comment', 'parsing', 'attributes'],
         'reporter'   : 'sirdarckcat, .mario'
@@ -1422,7 +1422,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['5.0', '6.0', '7.0', '8.0', '9.0', '10.0']
+            'internet explorer': ['5.0', 'latest (in older docmode)']
         },
         'tags'       : ['xss', 'javascript', 'comment', 'parsing', 'attributes'],
         'reporter'   : '.mario'
@@ -1454,11 +1454,11 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'opera': ['8.0', '9.0', '10.0', '11.0', '12.0', 'mobile'], 
-            'firefox' : ['1.x', '2.0', '3.0', '4.0', '15.0'],
-            'internet explorer': ['9.0', '10.0'],
-            'chrome': ['7.0', '23.0'],
-            'safari': ['4.0.4', '5.1.7']
+            'opera': ['8.0', 'latest'], 
+            'firefox' : ['1.x', 'latest'],
+            'internet explorer': ['9.0', 'latest'],
+            'chrome': ['7.0', 'latest'],
+            'safari': ['4.0.4', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'cdata', 'parsing', 'attributes', 'math', 'svg', 'inline'],
         'reporter'   : 'LeverOne'
@@ -1490,11 +1490,11 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['5.0', '6.0', '7.0', '8.0', '9.0', '10.0'],
-            'opera': ['8.x', '9.0', '10.0', '11.0', '12.0', 'mobile'], 
-            'firefox' : ['1.x', '2.0', '3.0', '4.0', '15.0'], 
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari': ['3.0', '4.0', '5.0', '5.1.7']
+            'internet explorer': ['5.0', 'latest'],
+            'opera': ['8.x', 'latest'], 
+            'firefox' : ['1.x', 'latest'], 
+            'chrome': ['3.0', 'latest'],
+            'safari': ['3.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'plaintext', 'tags', 'parsing', 'attributes'],
         'reporter'   : 'LeverOne'
@@ -1526,7 +1526,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'opera': ['8.0', '9.0', '10.0', '11.0', '12.0', 'mobile'] 
+            'opera': ['8.0', '12.0'] 
         },
         'tags'       : ['xss', 'javascript', 'css', 'background', 'opera', 'onerror', 'content'],
         'reporter'   : 'LeverOne, .mario'
@@ -1559,9 +1559,9 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'opera': ['8.x', '9.0', '10.0', '10.63', 'end'],
-            'safari': ['3.0', '4.0', '5.0', '5.1.7'],
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', 'end'] 
+            'opera': ['8.x', '10.63'],
+            'safari': ['3.0', '5.1.7'],
+            'internet explorer': ['5.5', '8.0'] 
         },
         'tags'       : ['xss', 'javascript', 'opera', 'internet explorer', 'base', 'hijacking'],
         'reporter'   : 'brainpillow, Gareth, .mario'
@@ -1640,7 +1640,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'opera': ['8.0', '9.0', '10.0', '11.0', '11.64', 'end', 'mobile']
+            'opera': ['8.0', '11.64']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'css', 'hijacking', 'proprietary'],
         'reporter'   : '.mario'
@@ -1673,11 +1673,11 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'opera': ['8.0', '9.0', '10.0', '11.0', '12.0', 'mobile'],
-            'firefox' : ['1.x', '2.0', '3.0', '4.0', '15.0'],
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari': ['3.0', '4.0', '5.0', '5.1.7'],
-            'internet explorer': ['8.0', '9.0', '10.0']
+            'opera': ['8.0', 'latest'],
+            'firefox' : ['1.x', 'latest'],
+            'chrome': ['3.0', 'latest'],
+            'safari': ['3.0', 'latest'],
+            'internet explorer': ['8.0', 'latest']
         },
         'tags'       : ['trick', 'opera', 'firefox', 'chrome', 'firefox', 'internet explorer', 'css'],
         'reporter'   : 'LeverOne, Michal Zalewski'
@@ -1710,7 +1710,7 @@ return [
             'de' : ''
         },            
         'browsers'   : {
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', '9.0']
+            'internet explorer': ['5.5', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'internet explorer', 'css', 'quirks mode', 'proprietary', 'trick'],
         'reporter'   : 'Gareth, LeverOne, sirdarckcat'
@@ -1742,11 +1742,11 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['10.x', '11.0', '12.0'],
-            'chrome': ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '23.0'],
-            'firefox': ['3.x', '4.0', '15.0'],
-            'internet explorer': ['9.0'],
-            'safari' : ['5.0', '5.1.7']
+            'opera': ['10.x', 'latest'],
+            'chrome': ['4.0', 'latest'],
+            'firefox': ['3.x', 'latest'],
+            'internet explorer': ['9.0', 'latest'],
+            'safari' : ['5.0', 'latest']
         },
         'tags'       : ['xss', 'svg', 'script', 'opera', 'firefox', 'chrome', 'internet explorer'],
         'reporter'   : 'Romain'
@@ -1778,8 +1778,8 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['10.0', '11.0', '12.0', 'mobile'],
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0', '10.0']
+            'opera': ['10.0', '12.0'],
+            'internet explorer': ['6.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'for', 'event', 'internet explorer'],
         'reporter'   : '.mario'
@@ -1811,9 +1811,9 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0']
+            'internet explorer': ['6.0', '9.0']
         },
-        'tags'       : ['xss', 'javascript', 'internet explorer', 'object', 'dataurl', 'TDS'],
+        'tags'       : ['xss', 'javascript', 'internet explorer', 'object', 'dataurl', 'TDC'],
         'reporter'   : '.mario'
     },
     { /* ID 50 - JavaScript execution via <OBJECT> data */
@@ -1843,10 +1843,10 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['8.x', '9.0', '10.0', '11.0', '12.0', 'mobile'], 
-            'firefox': ['1.x', '2.0', '3.0', '4.0', '15.0'], 
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari': ['4.0', '5.0', '5.1.7']
+            'opera': ['8.x', 'latest'], 
+            'firefox': ['1.x', 'latest'], 
+            'chrome': ['3.0', 'latest'],
+            'safari': ['4.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'chrome', 'embed', 'safari', 'src', 'firefox', 'base64'],
         'reporter'   : '.mario'
@@ -1878,9 +1878,9 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['8.x', '9.0', '10.0', '11.0', '12.0', 'mobile'], 
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari': ['4.0', '5.0', '5.1.7']
+            'opera': ['8.x', 'latest'], 
+            'chrome': ['3.0', 'latest'],
+            'safari': ['4.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'chrome', 'embed', 'safari', 'src', 'base64'],
         'reporter'   : '.mario'
