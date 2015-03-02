@@ -5103,12 +5103,11 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            ''
             'chrome' : ['4.0', 'latest'], 
             'opera' : ['9.0', 'latest'],
             'internet explorer' : ['6.0', 'latest'],
             'firefox' : ['1.x', 'latest'],
-            'safari' : ['4.0', 'latest'],
+            'safari' : ['4.0', 'latest']
         },
         'tags'      : ['referrer', 'opener', 'html5', 'location', 'tabnabbing'],
         'reporter'  : '.mario'
