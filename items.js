@@ -2227,20 +2227,20 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox': ['1.5', '2.0', '3.0', '4.0', '13.0'],
-            'opera': ['8.0', '9.0', '10.0', '11.0', '12.0', 'mobile'],
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0'],
-            'chrome': ['7.0', '23.0'],
-            'safari': ['4.0', '5.0', '5.1.7']
+            'firefox': ['1.5', 'latest'],
+            'opera': ['8.0', 'latest'],
+            'internet explorer': ['6.0', 'latest'],
+            'chrome': ['7.0', 'latest'],
+            'safari': ['4.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'css', 'encoding', 'escape', 'backslash', 'opera', 'firefox', 'internet explorer'],
         'reporter'   : 'Gareth, LeverOne, Renaud Lifchitz, .mario'
     },
-    { /* ID 62 - Simulating attribute in IE */
+    { /* ID 62 - Simulating attributes in IE */
         'id'         : 62,
         'category'   : 'html', 
         'name'       : {
-            'en' : 'Simulating attribute in IE',
+            'en' : 'Simulating attributes in IE',
             'ja' : '',
             'ru' : 'Симуляция атрибута в IE',
             'cs' : 'Simulace atributů v IE',
@@ -2248,7 +2248,7 @@ return [
         },
         'data'       : '<!-- IE 6-8 -->\r\n<x \'="foo"><x foo=\'><img src=x onerror=%js_alert%//\'>\r\n\r\n<!-- IE 6-9 -->\r\n<! \'="foo"><x foo=\'><img src=x onerror=%js_alert_2%//\'>\r\n<? \'="foo"><x foo=\'><img src=x onerror=%js_alert_3%//\'>',
         'description': {
-            'en' : 'This vector is simulated using in IE a single quote as an attribute to trick filters, works up to IE 9 standards mode.',
+            'en' : 'This vector simulates an attribute in IE by using a single quote to trick filters. This works up to IE9 in standards mode and in latest IE using older document modes.',
             'ja' : '',
             'ru' : 'Этот вектор симулирует использование в IE одиночной кавычки в качестве атрибута, чтобы обмануть фильтры. Работает вплоть до режима стандартов IE 9.',
             'cs' : 'Tento vektor předstírá v IE vložení atributu užitím apostrofů. Používá se pro oklamaní bezpečnostních filtrů.',
@@ -2263,7 +2263,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0', '10.0']
+            'internet explorer': ['6.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'javascript', 'attribute', 'simulating', 'parser', 'regex'],
         'reporter'   : 'Algol, jackmasa, LeverOne, White Jordan'
@@ -2295,10 +2295,10 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox': ['3.0', '4.0', '15.0'],
-            'chrome': ['4.0', '5.0', '6.0', 'end'],
-            'opera': ['8.x', '9.0', '10.0', '11.01', 'end', 'mobile 10.00', 'mobile 10.10', 'end'],
-            'internet explorer': ['6.0', 'end']
+            'firefox': ['3.0', 'latest'],
+            'chrome': ['4.0', '6.0'],
+            'opera': ['8.x', '11.01'],
+            'internet explorer': ['6.0']
         },
         'tags'       : ['xss', 'javascript', 'src', 'safari', 'chrome', 'opera', 'firefox', 'internet explorer'],
         'reporter'   : '.mario'
@@ -2337,8 +2337,9 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari': ['3.0', '4.0', '5.0', '5.1.7']
+            'chrome': ['3.0', 'latest'],
+            'opera' : ['16.0', 'latest'],
+            'safari': ['3.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'xxe', 'safari', 'chrome', 'xml', 'entities', 'doctype'],
         'reporter'   : '.mario'
@@ -2355,7 +2356,7 @@ return [
         },
         'data'       : '<svg onload="%js_uri_alert%" xmlns="http://www.w3.org/2000/svg"></svg>',        
         'description': {
-            'en' : 'SVG tags allow code to be executed with onload without any other elements.',
+            'en' : 'SVG tags allow code to be executed with onload without any other elements. This makes for a very short and effective XSS vector, useful in many situations.',
             'ja' : '',
             'ru' : 'SVG-элемент поддерживает атрибут onload, позволяющий автоматически выполнить JavaScript в отсутствие любых других элементов. Данный обработчик поддерживается большинством SVG-элементов. Чтобы увидеть их полный список, обратитесь к приведенной документации.',
             'cs' : 'Element SVG umožňuje automatické spuštění skriptu událostí load bez vložení dalších SVG dat.',
@@ -2370,11 +2371,11 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'chrome': ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari': ['3.4', '4.0', '5.0', '5.1.7'],
-            'firefox': ['2.0', '3.0', '4.0', '15.0'],
-            'opera': ['9.x', '10.0', '11.0', '12.0'],
-            'internet explorer': ['9.0']
+            'chrome': ['4.0', 'latest'],
+            'safari': ['3.4', 'latest'],
+            'firefox': ['2.0', 'latest'],
+            'opera': ['9.x', 'latest'],
+            'internet explorer': ['9.0', 'latest']
         },
         'tags'       : ['xss', 'svg', 'onload','chrome','firefox','safari','opera'],
         'reporter'   : 'gareth'
@@ -2406,9 +2407,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': [
-                '8.0', '9.0', '10.0', '11.0', '12.0', 'mobile'
-            ]
+            'opera': ['8.0', '12.0']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'xslt', 'xsl', 'stylesheet', 'xml'],
         'reporter'   : 'LeverOne'
@@ -2440,10 +2439,10 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'chrome': ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari': ['3.0', '4.0', '5.0', '5.1.7'],
-            'firefox': ['3.0', '4.0', '15.0'],        
-            'opera': ['8.0', '9.0', '10.0', '11.0', '12.0', 'mobile']
+            'chrome': ['4.0', 'latest'],
+            'safari': ['3.0', 'latest'],
+            'firefox': ['3.0', 'latest'],        
+            'opera': ['8.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'attlist', 'doctype', 'chrome', 'firefox', 'safari'],
         'reporter'   : '.mario'
@@ -2475,7 +2474,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox': ['3.0', '3.5', '3.6', '3.6.28', 'end']
+            'firefox': ['3.0', '3.6.28']
         },
         'tags'       : ['xss', 'javascript', 'xlink', 'firefox', 'xml'],
         'reporter'   : '.mario'
@@ -2507,7 +2506,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['9.x', '10.0', '11.0', '12.0', 'mobile']
+            'opera': ['9.x', '12.0']
         },
         'tags'       : ['xss', 'javascript', 'wmlscript', 'wml', 'opera', 'mobile', 'timer'],
         'reporter'   : '.mario'
@@ -2539,16 +2538,16 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0', 'end']
+            'internet explorer': ['6.0', '9.0']
         },
         'tags'       : ['xss', 'javascript', 'filter', 'css', 'style', 'onfilterchange', 'internet explorer'],
         'reporter'   : '.mario'
     },
-    { /* ID 71 - Closing tags accepting style attributes */
+    { /* ID 71 - Slash-tags accepting style attributes */
         'id'         : 71,
         'category'   : 'css', 
         'name'       : {
-            'en' : 'Closing tags accepting style attributes',
+            'en' : 'Slash-tags accepting style attributes',
             'ja' : '',
             'ru' : 'Закрывающий тег воспринимает атрибут style',
             'cs' : '',
@@ -2556,7 +2555,7 @@ return [
         },
         'data'       : '<// style=x:expression\\28%js_write%\\29>',
         'description': {
-            'en' : 'An unnamed closing tag can still contain style attributes on IE as the example shows. For extra obfuscation a bogus CSS property is being used to execute the JavaScript via expression() combined with CSS escapes. This example works up to IE 7 standards mode.', 
+            'en' : 'A slash-tag can still contain style attributes on IE as the example shows. For extra obfuscation a bogus CSS property is being used to execute the JavaScript via expression() combined with CSS escapes. This example works up to IE 7 standards mode.', 
             'ja' : '',
             'ru' : 'В данном примере показано, как тег, имеющий синтаксис закрывающего, воспринимает стилевой атрибут.  Выполнение JavaScript произойдет в режиме совместимости, а также в режиме стандартов IE 7↓. Однако возможность распознавания стилевого атрибута в таком теге сохраняется вплоть до режима стандартов IE8. В строгом смысле данные теги нельзя рассматривать в качестве закрывающих. Это особый вид тегов для Internet Explorer, которые данный браузер в указанных режимах считает пользовательскими. Пример работает вплоть до режима стандартов IE 7.',
             'cs' : 'Uzavírací tag bez uvedeného názvu tagu může v IE obsahovat atributy stylu, tak jak můžete vidět v uvedeném příkladu. Pro další zamlžení útoku je použíta falešná vlastnost CSS a metoda expression() kombinovaná s escapováním znaků.',
@@ -2564,14 +2563,14 @@ return [
         },
         'urls'    : ['http://msdn.microsoft.com/en-us/library/ms537634%28VS.85%29.aspx', 'http://www.w3.org/TR/CSS2/syndata.html'],
         'howtofix'   : {
-            'en' : 'Make sure the HTML filter you use deals with unnamed closing tags and doesn\'t consider them to be plain text. Also be aware of CSS escapes and how they can completely obfuscate any style info inside <STYLE> tags and "style" attributes.',
+            'en' : 'Make sure the HTML filter you use deals with slash-tags and doesn\'t consider them to be plain text. Also be aware of CSS escapes and how they can completely obfuscate any style info inside <STYLE> tags and "style" attributes.',
             'ja' : '',
             'ru' : 'Убедитесь, что ваш HTML-фильтр, анализирует в том числе закрывающие теги.',
             'cs' : 'Ujistěte se, že HTML filtr počítá i s použitím nepojmenovaného uzavíracího tagu a nepovažuje jej za prostý text. Také počítat s CSS escapováním a vědět, jak může zamlžit jakýkoliv styl uvnitř tagu <STYLE> a atributu "style".',
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0']
+            'internet explorer': ['6.0', '10.0']
         },
         'tags'       : ['xss', 'javascript', 'closing tag', 'css', 'style', 'expression', 'internet explorer', 'quirks mode'],
         'reporter'   : 'Gareth, .mario'
@@ -2604,11 +2603,11 @@ return [
             'de' : ''
         },
         'browsers'   : {
-            'firefox': ['4.0', '15.0'],
-            'opera': ['10.5', '11.0', '12.0', 'mobile'], 
-            'chrome': ['10.0', '23.0'],
-            'safari': ['4.0.4', '5.1.7'],
-            'internet explorer': ['10.0']
+            'firefox': ['4.0', 'latest'],
+            'opera': ['10.5', 'latest'], 
+            'chrome': ['10.0', 'latest'],
+            'safari': ['4.0.4', 'latest'],
+            'internet explorer': ['10.0', 'latest']
         },
         'tags'       : ['xss', 'html5', 'opera', 'formaction', 'javascript', 'button'],
         'reporter'   : '.mario'
@@ -2647,7 +2646,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['8.x', '9.0', '10.0', '10.63', 'end', 'mobile 10.00', 'mobile 10.10', 'end']
+            'opera': ['8.x', '10.63']
         },
         'tags'       : ['xss', 'javascript', 'event-source', 'opera', 'sse'],
         'reporter'   : '.mario'
@@ -2679,7 +2678,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['8.x', '9.0', '10.0', '10.63', 'end', 'mobile 10.00', 'mobile 10.10', 'end']
+            'opera': ['8.x', '10.63']
         },
         'tags'       : ['xss', 'javascript', 'event-source', 'opera', 'sse'],
         'reporter'   : '.mario'
@@ -2711,7 +2710,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox': ['1.5', '2.0', '3.0', '3.6.28', 'end']
+            'firefox': ['1.5', '3.6.28']
         },
         'tags'       : ['xss', 'javascript', 'e4x', 'script', 'parser', 'regex'],
         'reporter'   : '.mario, Gareth'
@@ -2735,7 +2734,7 @@ return [
             'raw'           : '<!ENTITY x "&#x3C;html:img&#x20;src=\'x\'&#x20;xmlns:html=\'http://www.w3.org/1999/xhtml\'&#x20;onerror=\'%js_alert%\'/&#x3E;">'
         },
         'description': {
-            'en' : 'IE will render doctype-provided entities in the "html" namespace as soon as a user defined XML stylesheet tag is present. The example works up to IE 8 standards mode.',
+            'en' : 'IE will render doctype-provided entities in the "html" namespace as soon as a user defined XML stylesheet tag is present. The example works up to IE8 standards mode.',
             'ja' : '',
             'ru' : 'IE для отображения HTML-тегов требует обязательного наличия на xml-странице пользовательской таблицы стилей, а также объявления соответствующего пространства имен с префиксом "html". Пример работает вплоть до режима стандартов IE 8.',
             'cs' : 'Internet Explorer bude renderovat doctype entity ve jmeném prostoru "html" ve chvíli, kdy je zobrazen uživatelem definovaný tag XML stysheet.',
@@ -2750,7 +2749,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0']
+            'internet explorer': ['6.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'xml', 'dtd', 'arbitrary'],
         'reporter'   : 'LeverOne'
@@ -2782,7 +2781,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0']
+            'internet explorer': ['6.0', '10.0']
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'xml', 'css', 'style'],
         'reporter'   : 'LeverOne'
@@ -2821,7 +2820,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0']
+            'internet explorer': ['6.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'xml', 'xdr', 'arbitrary', 'xml data reduced', 'xsl'],
         'reporter'   : 'LeverOne'
@@ -2860,10 +2859,10 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'safari': ['3.0', '4.0', '5.0', '5.1.7'],
-            'firefox': ['1.5', '2.0', '3.0', '4.0', '15.0'],        
-            'opera': ['10.0', '11.0', '12.0', 'mobile'],
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0', '10.0']
+            'safari': ['3.0', 'latest'],
+            'firefox': ['1.5', 'latest'],        
+            'opera': ['10.0', '12.0'],
+            'internet explorer': ['6.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'object', 'flash', 'swf', 'safari', 'firefox', 'opera'],
         'reporter'   : '.mario'
@@ -2895,7 +2894,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', 'end']
+            'internet explorer': ['6.0']
         },
         'tags'       : ['xss', 'javascript', 'css', 'expression', 'unicode', 'halfwidth', 'fullwidth', 'internet explorer'],
         'reporter'   : '.mario'
@@ -2927,7 +2926,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox': ['3.0', '3.6', '3.6.28', 'end']
+            'firefox': ['3.0', '3.6.28']
         },
         'tags'       : ['xss', 'javascript', 'xlink', 'firefox', 'xml'],
         'reporter'   : 'LeverOne, .mario'
@@ -2944,10 +2943,10 @@ return [
         },
         'data'       : '<?xml-stylesheet type="text/css" href="data:,*%7bx:expression(%js_write_2%);%7d"?>',
         'description': {
-            'en' : 'Internet Explorer 8 and 9 support data URIs and thus are capable of including stylesheets this way. By using a xml stylesheet tag and a data URI containing an expression() it\'s possible to execute JavaScript without user interaction.',
+            'en' : 'Internet Explorer 8 to 10 support data URIs and thus are capable of including stylesheets this way. By using a xml stylesheet tag and a data URI containing an expression() it\'s possible to execute JavaScript without user interaction.',
             'ja' : '',
-            'ru' : 'В примере еще раз показана возможность Internet Explorer 8 и 9 использовать data-схему для хранения небезопасной стилевой информации в XML.',
-            'cs' : 'Internet Explorer 8 a 9 podporuje data URI a tak jsou schopny vložit touto cestou stylesheet. Použitím tagu xml-stylesheet a data URI obsahující expression() je možné spustit kód JavaScriptu bez uživatelské interakce.',
+            'ru' : 'В примере еще раз показана возможность Internet Explorer 8, 9 и 10 использовать data-схему для хранения небезопасной стилевой информации в XML.',
+            'cs' : 'Internet Explorer 8, 9 a 10 podporuje data URI a tak jsou schopny vložit touto cestou stylesheet. Použitím tagu xml-stylesheet a data URI obsahující expression() je možné spustit kód JavaScriptu bez uživatelské interakce.',
             'de' : ''
         },
         'urls'    : ['http://www.w3.org/TR/xml-stylesheet/'],
@@ -2959,7 +2958,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['8.0', '9.0']
+            'internet explorer': ['8.0', '10.0']
         },
         'tags'       : ['xss', 'javascript', 'xml stylesheet', 'css', 'internet explorer', 'expression',  'xml'],
         'reporter'   : '.mario'
@@ -2991,7 +2990,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['9.x', '10.0', '11.0', '12.0', 'mobile']
+            'opera': ['9.x', '12.0']
         },
         'tags'       : ['xss', 'javascript', 'wml', 'opera', 'mobile', 'timer', 'variable'],
         'reporter'   : 'LeverOne, .mario'
@@ -3023,7 +3022,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['9.x', '10.0', '11.0', '11.01', 'end', 'mobile', 'end']
+            'opera': ['9.x', '11.01']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'event', 'handler'],
         'reporter'   : 'LeverOne'
@@ -3062,7 +3061,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera': ['9.x', '10.0', '11.0', '12.0', 'mobile']
+            'opera': ['9.x', '12.0']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'event', 'handler', 'arbitrary'],
         'reporter'   : 'LeverOne'
@@ -3094,11 +3093,11 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox' : ['3.6', '4.0', '15.0'], 
-            'safari' : ['4.0', '5.0', '5.1.7'], 
-            'chrome' : ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'opera': ['9.0', '10.0', '11.0', '12.0', 'mobile'],
-            'internet explorer': ['10.0']
+            'firefox' : ['3.6', 'latest'], 
+            'safari' : ['4.0', 'latest'], 
+            'chrome' : ['4.0', 'latest'],
+            'opera': ['9.0', 'latest'],
+            'internet explorer': ['10.0', 'latest']
         },
         'tags'       : ['xss', 'javascript', 'html5', 'oninput', 'form', 'passive', 'event'],
         'reporter'   : 'Skyphire'
@@ -3130,11 +3129,11 @@ return [
             'de' : ''
         }, 
         'browsers'   : {
-           'chrome' : ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-           'safari' : ['3.4', '4.0', '5.0', '5.1.7'],
-           'firefox': ['3.0', '4.0', '15.0'],
-           'opera'  : ['9.x', '10.0', '11.0', '12.0'],
-           'internet explorer': ['6.0', '7.0', '8.0', '9.0']
+           'chrome' : ['4.0', 'latest'],
+           'safari' : ['3.4', 'latest'],
+           'firefox': ['3.0', 'latest'],
+           'opera'  : ['9.x', 'latest'],
+           'internet explorer': ['6.0', 'latest']
         },
         'tags'       : ['xss', 'svg', 'passive', 'xlink', 'chrome', 'firefox', 'safari', 'opera'],
         'reporter'   : 'LeverOne'
@@ -3166,7 +3165,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-	       'opera'  : ['9.x', '10.0', '11.0', '12.0']
+	       'opera'  : ['9.x', '12.0']
         },
         'tags'       : ['xss', 'svg', 'active', 'xlink', 'opera'],
         'reporter'   : 'LeverOne'
@@ -3198,8 +3197,8 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'chrome' : ['4.0', '5.0', '6.0', '10.0', 'end'],
-            'safari' : ['3.4', '4.0', '4.0.3', 'end'],
+            'chrome' : ['4.0', '10.0'],
+            'safari' : ['3.4', '4.0.3'],
         },
         'tags'       : ['xss', 'svg', 'event', 'safari', 'chrome'],
         'reporter'   : 'LeverOne'
@@ -3238,7 +3237,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-	       'opera'  : ['10.x', '11.0', '12.0']
+	       'opera'  : ['10.x', '12.0']
         },
         'tags'       : ['xss', 'svg', 'css', 'opera', 'content', 'form'],
         'reporter'   : 'LeverOne'
@@ -3270,11 +3269,11 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['5.0', '6.0', '7.0', '8.0', '9.0', '10.0'],
-            'opera': ['8.x', '9.0', '10.0', '11.0', '12.0', 'mobile'], 
-            'firefox' : ['1.x', '2.0', '3.0', '4.0', '15.0'], 
-            'chrome': ['3.0', '4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari': ['3.0', '4.0', '5.0', '5.1.7']
+            'internet explorer': ['5.0', 'latest'],
+            'opera': ['8.x', 'latest'], 
+            'firefox' : ['1.x', 'latest'], 
+            'chrome': ['3.0', 'latest'],
+            'safari': ['3.0', 'latest']
         },
         'tags'       : ['xss', 'tagname', 'internet explorer', 'opera', 'firefox', 'chrome', 'safari', 'parsing', 'breaking', 'obfuscation', 'closing tag'],
         'reporter'   : 'LeverOne, wpulog'
@@ -3307,7 +3306,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0']
+            'internet explorer': ['6.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'css', 'internet explorer', 'trick', 'notation'],
         'reporter'   : 'LeverOne'
@@ -3339,7 +3338,7 @@ return [
             'de' : ''
         },
         'browsers'   : {
-            'internet explorer': ['6.0' , 'end']
+            'internet explorer': ['6.0']
         },
         'tags'       : ['xss', 'css', 'internet explorer', 'trick', 'url'],
         'reporter'   : 'LeverOne'
@@ -3371,7 +3370,7 @@ return [
             'de' : ''
         },
         'browsers'   : {
-            'opera'  : ['10.0', '11.0', '12.0', 'mobile']
+            'opera'  : ['10.0', '12.0']
         },
         'tags'       : ['xss', 'svg', 'opera', 'XML-events'],
         'reporter'   : 'LeverOne'
@@ -3403,7 +3402,7 @@ return [
             'de' : ''
         },
         'browsers'   : {
-            'opera'  : ['10.0', '11.0', '12.0', 'mobile']
+            'opera'  : ['10.0', '12.0']
         },
         'tags'       : ['xss', 'svg', 'opera', 'filter effects', 'feimage'],
         'reporter'   : '.mario'
@@ -3442,7 +3441,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['5.0', '6.0', 'end', '7.0', 'end', '8.0', 'end']
+            'internet explorer': ['5.0', '10.0']
         },
         'tags'       : ['xss', 'internet explorer', 'archive', 'mhtml'],
         'reporter'   : 'Bolk, LeverOne'
@@ -3474,7 +3473,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0', '10.0']
+            'internet explorer': ['6.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'script', 'dom', 'innerhtml'],
         'reporter'   : 'LeverOne'
@@ -3507,8 +3506,8 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0', '10.0'],
-            'firefox': ['2.x', '3.0', '3.6.28', 'end'] 
+            'internet explorer': ['6.0', 'latest (in older docmodes)'],
+            'firefox': ['2.x', '3.6.28'] 
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'script', 'dom', 'innerhtml', 'css'],
         'reporter'   : 'sirdarckcat'
@@ -3540,11 +3539,11 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0'],
-            'firefox': ['3.x', '4.0', '15.0'],
-            'opera'  : ['9.x', '10.0', '11.0', '12.0', 'mobile'],
-            'chrome' : ['4.0', '5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari' : ['3.0', '4.0', '5.0', '5.1.7'],
+            'internet explorer': ['6.0', 'latest'],
+            'firefox': ['3.x', 'latest'],
+            'opera'  : ['9.x', 'latest'],
+            'chrome' : ['4.0', 'latest'],
+            'safari' : ['3.0', 'latest'],
         },
         'tags'       : ['trick', 'css', 'obfuscation', 'internet explorer', 'firefox', 'opera', 'chrome', 'safari', 'comment'],
         'reporter'   : 'Roman Ivanov, LeverOne'
@@ -3577,11 +3576,11 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0', '10.0'],
-            'firefox': ['4.0', '15.0'],
-            'opera'  : ['9.x', '10.0', '11.0', '12.0', 'mobile'],
-            'chrome' : ['5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari' : ['4.0', '5.0', '5.1.7'],
+            'internet explorer': ['6.0', 'latest (in older docmodes)'],
+            'firefox': ['4.0', 'latest'],
+            'opera'  : ['9.x', 'latest'],
+            'chrome' : ['5.0', 'latest'],
+            'safari' : ['4.0', 'latest'],
         },
         'tags'       : ['xss', 'internet explorer', 'firefox','opera', 'chrome', 'safari', 'separator'],
         'reporter'   : 'hasegawayosuke, .mario, RSnake, '
@@ -3614,11 +3613,11 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0'],
-            'firefox': ['4.0', '15.0'],
-            'opera'  : ['10.0', '11.0', '12.0', 'mobile'],
-            'chrome' : ['5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari' : ['4.0', '5.0', '5.1.7'],
+            'internet explorer': ['6.0', 'latest'],
+            'firefox': ['4.0', 'latest'],
+            'opera'  : ['10.0', 'latest'],
+            'chrome' : ['5.0', 'latest'],
+            'safari' : ['4.0', 'latest'],
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'script', 'chrome', 'safari'],
         'reporter'   : 'Gareth, .mario, RSnake'
@@ -3650,7 +3649,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer' : ['6.0', '7.0', '8.0', 'end'],
+            'internet explorer' : ['6.0', '8.0 (unpatched)'],
         },
         'tags'       : ['xss', 'javascript', 'internet explorer', 'parser', 'backtick', 'plaintext'],
         'reporter'   : '.mario, hasegawayosuke'
@@ -3682,10 +3681,11 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox' : ['4.0', '15.0'],
-            'chrome' : ['6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari' : ['5.0', '5.1.7'],
-            'opera' : ['11.50', '12.0', 'mobile'] 
+            'firefox' : ['4.0', 'latest'],
+            'chrome' : ['6.0', 'latest'],
+            'safari' : ['5.0', 'latest'],
+            'opera' : ['11.50', 'latest'],
+            'internet explorer' : ['10.0', 'latest'] 
         },
         'tags'       : ['xss', 'javascript', 'spoofing', 'history', 'phishing'],
         'reporter'   : '.mario, freddyb'
@@ -3717,7 +3717,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera' : ['10.x', '11.0', '12.0', 'mobile']
+            'opera' : ['10.x', '12.0']
         },
         'tags'       : ['xss', 'javascript', 'svg', 'tinysvg', 'listener', 'xml', 'events'],
         'reporter'   : '.mario'
@@ -3749,7 +3749,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera' : ['10.x', '11.0', '12.0', 'mobile']
+            'opera' : ['10.x', '12.0']
         },
         'tags'       : ['xss', 'javascript', 'svg', 'svgz', 'gzip', 'xml', 'compression'],
         'reporter'   : '.mario'
@@ -3781,7 +3781,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'safari' : ['4.0', '4.0.3', 'end']
+            'safari' : ['4.0', '4.0.3']
         },
         'tags'       : ['xss', 'javascript', 'safari', 'attributes', 'delimiter', 'parser'],
         'reporter'   : 'Superhei, .mario'
@@ -3813,7 +3813,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer' : ['6.0', '7.0', '8.0', '9.0', '10.0']
+            'internet explorer' : ['6.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'javascript', 'title', 'onpropertychange', 'internet explorer'],
         'reporter'   : '.mario'
@@ -3845,7 +3845,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer' : ['6.0', '7.0', '8.0', '9.0']
+            'internet explorer' : ['6.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'javascript', 'parameter', 'parsing', 'internet explorer'],
         'reporter'   : 'Algol, jackmasa, sirdarckcat'
@@ -3884,7 +3884,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera' : ['10.x', '11.0', '12.0', 'mobile']
+            'opera' : ['10.x', '12.0']
         },
         'tags'       : ['xss', 'javascript', 'svg', 'css', 'xml', 'style'],
         'reporter'   : 'LeverOne'
@@ -3923,7 +3923,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'opera' : ['10.x', '11.0', '11.52', 'end', 'mobile 10.0', 'mobile 11.0', 'end']
+            'opera' : ['10.x', '11.52']
         },
         'tags'       : ['xss', 'javascript', 'svg', 'css', 'xml', 'style'],
         'reporter'   : 'LeverOne'
@@ -3956,8 +3956,8 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'chrome' : ['5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari' : ['4.0', '5.0', '5.1.7']
+            'chrome' : ['5.0', 'latest'],
+            'safari' : ['4.0', 'latest']
         },
         'tags'       : ['xss', 'css', 'google chrome', 'safari', 'trick', 'notation'],
         'reporter'   : 'LeverOne, .mario'
@@ -3990,7 +3990,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer' : ['6.0', '7.0', '8.0', '9.0']
+            'internet explorer' : ['6.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'css', 'internet explorer', 'trick', 'notation'],
         'reporter'   : 'LeverOne'
@@ -4023,9 +4023,9 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox' : ['2.x', '3.0', '4.0', '15.0'],
-            'opera'   : ['9.x', '10.0', '11.0', '12.0', 'mobile'],
-            'internet explorer' : ['8.0', '9.0']
+            'firefox' : ['2.x', 'latest'],
+            'opera'   : ['9.x', '12.0'],
+            'internet explorer' : ['8.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'css', 'firefox', 'opera', 'trick', 'selector', 'attribute'],
        'reporter'   : 'LeverOne'
@@ -4058,8 +4058,9 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'chrome' : ['5.0', '6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
-            'safari' : ['4.0', '5.0', '5.1.7']
+            'chrome' : ['5.0', 'latest'],
+            'safari' : ['4.0', 'latest'], 
+            'opera' : ['15.0', 'latest']
         },
         'tags'       : ['xss', 'css', 'google chrome', 'safari', 'trick', 'notation'],
         'reporter'   : '.mario, LeverOne'
@@ -4091,7 +4092,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer' : ['6.0', '7.0', '8.0', '9.0', '10.0']
+            'internet explorer' : ['6.0', 'latest (in older docmodes)']
         },
         'tags'       : ['xss', 'conditional', 'comments', 'internet explorer', 'rectangular'],
         'reporter'   : '.mario'
@@ -4123,7 +4124,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer' : ['6.0', '7.0', '8.0', 'end']
+            'internet explorer' : ['6.0', '8.0']
         },
         'tags'       : ['xss', 'behavior', 'import', 'xml', 'namespace', 'time', 'entities'],
         'reporter'   : 'LeverOne, GreyMagic'
@@ -4173,7 +4174,7 @@ return [
         },
         'data'       : '<div draggable="true" ondragstart="event.dataTransfer.setData(\'text/plain\',\'malicious code\');">\n\t<h1>Drop me</h1>\n</div>\n\n<iframe src="http://www.example.org/dropHere.html"></iframe>',        
         'description': {
-            'en' : 'The method "setData" allows, with the event handler "ondragstart" and the attribute "draggable" with the value "true", to drag the text "malicious code" and not "Drop me" into the IFRAME. This IFRAME can consist of a web page with an input field to drop in data.',
+            'en' : 'The method "setData" allows, with the event handler "ondragstart" and the attribute "draggable" with the value "true", to drag the text "malicious code" and not "Drop me" into the IFRAME. This IFRAME can consist of a web page with an input field to drop in data. Note that cross-origin drag&drop has meanwhile been heavily restricted in power due to security risks.',
             'ja' : '',
             'ru' : 'В примере показано, как с помощью метода setData осуществить подмену перетаскиваемого текста, т.к. в данном случае в целевой ифрейм будет передан не текст "Drop me", а содержимое строки "malicious code". Сам ифрейм может содержать, например, некое поле ввода, критически зависимое от вводимых данных. ',
             'cs' : 'Metoda "setData" umožňuje, s využitím ovladače události "ondragstart" a při nastaveném atributu "draggable" na "true", přetáhnout během drag-end-drop do rámu text "malicious code" namísto textu "Drop me". Rám může obsahovat vstupní pole pro převzetí těchto dat.',
@@ -4189,8 +4190,8 @@ return [
         },                        
         'browsers'   : {
             'opera'   : ['12.0'],
-            'firefox' : ['3.x', '4.0', '15.0'],
-	          'safari' : ['5.0', '5.1.7']
+            'firefox' : ['3.x', '15.0'],
+	        'safari' : ['5.0', '5.1.7']
         },
         'tags'       : ['clickjacking', 'firefox', 'drag-and-drop', 'setData', 'ondragstart', 'draggable'],
         'reporter'   : 'mniemietz'
@@ -4223,7 +4224,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-			'firefox': ['2.x', '3.0', '4.0', '13.0', 'end']
+			'firefox': ['2.x', '13.0']
         },
         'tags'       : ['clickjacking', 'firefox', 'content extraction', 'view-source'],
         'reporter'   : 'mniemietz'
@@ -4256,9 +4257,9 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'internet explorer': ['5.0', '6.0', '7.0', '8.0', '9.0'],
-            'firefox' : ['2.x', '3.0', '4.0', '15.0'], 
-            'chrome': ['6.0', '7.0', '8.0', '9.0', '10.0', '23.0'],
+            'internet explorer': ['5.0', '9.0'],
+            'firefox' : ['2.x', 'latest'], 
+            'chrome': ['6.0', '23.0'],
             'safari': ['5.0', '5.1.7']
         },
         'tags'       : ['clickjacking', 'internet explorer', 'opera', 'firefox', 'chrome', 'safari', 'pop-up'],
@@ -4291,7 +4292,7 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'firefox' : ['3.x', '4.0', '15.0']
+            'firefox' : ['3.x', 'latest']
         },
         'tags'       : ['clickjacking', 'firefox', 'svg', 'masking'],
         'reporter'   : 'mniemietz'
@@ -4323,8 +4324,10 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-            'chrome' : ['8.0', '23.0'],
-            'safari' : ['5.1.7']
+            'chrome' : ['8.0', 'latest'],
+            'internet explorer' : ['10.0', 'latest'],
+            'safari' : ['5.1.7', 'latest'],
+            'opera' : ['15.0', 'latest']
         },
         'tags'       : ['clickjacking', 'chrome', 'iframe', 'sandbox'],
         'reporter'   : 'kkotowicz'
@@ -4356,11 +4359,11 @@ return [
             'de' : ''
         },                        
         'browsers'   : {
-		    'internet explorer': ['8.0'],
-            'opera': ['10.x', '11.0', '12.0'], 
-            'firefox' : ['2.x', '3.0', '4.0', '15.0'], 
-            'chrome': ['8.0', '9.0', '10.0', '23.0'],
-            'safari': ['5.0', '5.1.7']
+		    'internet explorer': ['latest'],
+            'opera': ['10.x', 'latest'], 
+            'firefox' : ['2.x', 'latest'], 
+            'chrome': ['8.0', 'latest'],
+            'safari': ['5.0', 'latest']
         },
         'tags'       : ['clickjacking', 'classjacking', 'jQuery', 'class'],
         'reporter'   : 'mniemietz'
@@ -4395,8 +4398,8 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'chrome': ['9.0', '10.0', '23.0'],
-            'safari': [ '5.0', '5.1.7']
+            'chrome': ['9.0', 'latest'],
+            'safari': [ '5.0', 'latest']
         },
         'tags'      : [ 'html', 'dom' ],
         'reporter'  : 'hasegawayosuke'
@@ -4430,8 +4433,8 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'internet explorer': ['9.0'],
-            'firefox': [ '3.x', '4.0', '15.0']
+            'internet explorer': ['9.0', 'latest'],
+            'firefox': [ '3.x', 'latest']
         },
         'tags'      : [ 'svg', 'html', 'chameleon', 'xslt', 'embedded', 'xss'],
         'reporter'  : '.mario'
@@ -4466,7 +4469,7 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0']
+            'internet explorer': ['6.0', '10.0']
         },
         'tags'      : [ 'quicktime', 'html', 'event', 'object', 'classid', 'xss'],
         'reporter'  : '.mario'
@@ -4501,7 +4504,7 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'opera': ['9.0', '10.0', '11.0', '12.0']
+            'opera': ['9.0', '12.0']
         },
         'tags'      : [ 'svg', 'opera', 'xml', 'events', 'listener', 'handler', 'xss'],
         'reporter'  : '.mario'
@@ -4536,7 +4539,7 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'firefox': ['4.0', 'end']
+            'firefox': ['4.0']
         },
         'tags'      : [ 'svg', 'xss', 'inline', 'entities', 'firefox', 'css', 'xml', 'innerhtml'],
         'reporter'  : '.mario'
@@ -4607,10 +4610,10 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'firefox': ['6', '7', '8', '9', '10', '11', '15']
+            'firefox': ['6', 'latest']
         },
         'tags'      : [ 'mathml', 'xss', 'inline', 'firefox'],
-        'reporter'  : '.mario'
+        'reporter'  : '.mario, LeverOne'
     },
     { /* ID 131 - Passive XSS via Drag&Drop of specially crafted URIs  */
         'id'        : 131,
@@ -4642,7 +4645,7 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'firefox': ['6', '7', '8', '9', '10.0.2', 'end']
+            'firefox': ['6', '10.0.2']
         },
         'tags'      : [ 'drag&drop', 'html5', 'iframe', 'feed', 'firefox'],
         'reporter'  : 'irsdl'
@@ -4677,7 +4680,7 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'firefox': ['4', '5', '6', '7', '8', '9', '15']
+            'firefox': ['4', 'latest']
         },
         'tags'      : [ 'svg', 'html5', 'noscript', 'keylogger', 'firefox', 'thunderbird'],
         'reporter'  : '.mario'
@@ -4712,7 +4715,7 @@ return [
             'zh'    : '不允许用户提交注释标签'
         },
         'browsers'  : {
-            'internet explorer': ['6.0', '7.0', '8.0']
+            'internet explorer': ['6.0', '8.0']
         },
         'tags'      : ['xss', 'comments', 'internet explorer', 'backtick'],
         'reporter'  : 'jackmasa'
@@ -4747,8 +4750,8 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'internet explorer': ['6.0', '7.0', '8.0', '9.0', '10.0'],
-            'safari': [ '3.0', '4.0', '4.0.3', 'end']
+            'internet explorer': ['6.0', 'latest (in older docmodes)'],
+            'safari': [ '3.0', '4.0.3']
         },
         'tags'      : ['xss', 'plaintext', 'internet explorer', 'safari', 'comment', 'SGML', 'escape'],
         'reporter'  : 'sirdarckcat, wpulog'
@@ -4786,7 +4789,7 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'internet explorer': ['5.5', '6.0', '7.0', '8.0', '9.0', '10.0']
+            'internet explorer': ['5.5', 'latest (in older docmodes)']
         },
         'tags'      : ['xss', 'xslt', 'internet explorer', 'xml', 'wdxsl', 'legacy'],
         'reporter'  : '.mario'
@@ -4825,7 +4828,7 @@ return [
         },
         'browsers'  : {
             'opera': ['12.0'],
-            'chrome': ['22.0', '23.0', '24.0', '25.0', 'latest']
+            'chrome': ['22.0', 'latest']
         },
         'tags'      : ['html5', 'dirname', 'privacy', 'http', 'form', 'infoleak'],
         'reporter'  : '.mario'
@@ -4863,10 +4866,10 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-        	'firefox' : ['25.0', '27.0', '28.0'],
-            'opera':  	['15.0'],
-            'chrome': 	['30.0', '32.0', '35.0'],
-            'safari': 	[ '5.0', '6.0']
+        	'firefox' : ['25.0', 'latest'],
+            'opera':  	['15.0', 'latest'],
+            'chrome': 	['30.0', 'latest'],
+            'safari': 	[ '5.0', 'latest']
         },
         'tags'      : ['html5', 'svg', 'from', 'inline', 'xss', 'passive'],
         'reporter'  : '.mario'
@@ -4904,7 +4907,8 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'chrome': ['33.0', '34.0', '35.0']
+            'chrome': ['33.0', 'latest'], 
+            'opera' : ['latest']
         },
         'tags'      : ['html5', 'imports', 'link', 'rel', 'xss', 'active'],
         'reporter'  : '.mario'
@@ -4942,9 +4946,9 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'firefox' : ['26.0', '27.0', '28.0'],
-            'chrome': ['20.0', '34.0', '35.0'],
-            'opera' : ['15.0']
+            'firefox' : ['26.0', 'latest'],
+            'chrome': ['20.0', 'latest'],
+            'opera' : ['15.0', 'latest']
         },
         'tags'      : ['html5', 'iframe', 'sandbox', 'srcdoc', 'xss', 'active', 'entities'],
         'reporter'  : '.mario'
@@ -4983,7 +4987,7 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'firefox' : ['34.0']
+            'firefox' : ['34.0', 'latest']
         },
         'tags'      : ['es6', 'javascript', 'backtick', 'template'],
         'reporter'  : '.mario'
@@ -5022,7 +5026,7 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'firefox' : ['34.0']
+            'firefox' : ['34.0', 'latest']
         },
         'tags'      : ['es6', 'javascript', 'backtick', 'template', 'svg'],
         'reporter'  : '.mario'
@@ -5060,7 +5064,7 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'chrome' : ['38.0']
+            'chrome' : ['38.0', 'latest']
         },
         'tags'      : ['picture', 'srcset', 'html5', 'accessibility'],
         'reporter'  : '.mario'
