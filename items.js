@@ -5068,6 +5068,50 @@ return [
         },
         'tags'      : ['picture', 'srcset', 'html5', 'accessibility'],
         'reporter'  : '.mario'
-    }    
+    },
+    { /* ID 143 - Bypassing window.opener protection of rel="noreferrer"  */
+        'id'        : 143,
+        'category'  : 'html5',
+        'name'      : {
+            'en'    : 'Bypassing window.opener protection of rel="noreferrer"',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'data'      : '<a href="//evil.com" target="_blank" rel="noreferrer">CLICK</a> // window.opener will be null\r\n\r\n<map><area href="//evil.com" target="_blank" rel="noreferrer">CLICK</area></map> // window.opener will be null\r\n\r\n<svg><a xlink:href="//evil.com" rel="noreferrer">CLICK</a></svg> // window.opener still works\r\n<form action="//evil.com" rel="noreferrer"><input type="submit"></form>// window.opener still works\r\n\r\n<math href="//evil.com" rel="noreferrer">CLICKME</math>// window.opener still works',
+        'description' : {
+            'en'    : 'In many situations, a developer might want to mitigate tab-nabbing attacks that are using window.opener and its writable location object. To do so, it is recommended to apply external links with a rel="noreferrer" attribute. Depending on how the external links are embedded, the protection might however fail - and window.opener might not be null but still be exposed. The problem here is, that rel attributes only work for <a> and <area>. Links and link-like navigation features can however be embedded in multiple other ways. Further note, that MSIE pretty much ignores the standard and doesn\'t destroy window.opener without further effort.',
+            'ja'    : '',
+            'ru'    : '', 
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'urls'      : [
+                        'https://code.google.com/p/chromium/issues/detail?id=45008#c1',
+                        'https://code.google.com/p/chromium/issues/detail?id=162774',
+                        'https://github.com/molnarg/tabnabbing-demo'
+                    ],
+        'howtofix'  : {
+            'en'    : 'Do not rely on the noreferrer attribute value alone, but rather use a dedicated de-referrer page that in additon deactivates window.opener using window.opener.__proto__=null.',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'browsers'  : {
+            ''
+            'chrome' : ['4.0', 'latest'], 
+            'internet explorer' : ['6.0', 'latest'],
+            'internet explorer' : ['6.0', 'latest'],
+            'firefox' : ['1.x', 'latest'],
+            'safari' : ['4.0', 'latest'],
+        },
+        'tags'      : ['referrer', 'opener', 'html5', 'location', 'tabnabbing'],
+        'reporter'  : '.mario'
+    } 
 ]
 }));
