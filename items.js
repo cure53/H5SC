@@ -5064,7 +5064,8 @@ return [
             'zh'    : ''
         },
         'browsers'  : {
-            'chrome' : ['38.0', 'latest']
+            'chrome' : ['38.0', 'latest'],
+            'internet explorer' : ['Spartan']
         },
         'tags'      : ['picture', 'srcset', 'html5', 'accessibility'],
         'reporter'  : '.mario'
