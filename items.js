@@ -1828,7 +1828,7 @@ return [
         },
         'data'       : '<object data="data:text/html;base64,%js_base64_alert%"></object>',
         'description': {
-            'en' : 'Almost all browsers supporting data URIs allow executing JavaScript via crafted <OBJECT> "data" attribute value - even if base64 encoded.',
+            'en' : 'Almost all browsers supporting data URIs allow executing JavaScript via crafted <OBJECT> "data" attribute value - even if base64 encoded. Note however, that different browsers execute the JavaScript on different origins. Firefox for instance will execute on the hosting domain and thus allow XSS, while Chrome will execute on about:blank.',
             'ja' : '',
             'ru' : 'Почти все браузеры, поддерживающие протокол data, исполняют JavaScript с помощью атрибута data тега <OBJECT>, который в приведенном примере кодирован в base64.',
             'cs' : 'Většina webových prohlížečů umožňuje spuštění JavaScriptu použitím direktivy javascript: v atributu "data" tagu <OBJECT>. Samotný JavaScript přitom může být zakódován do base64.',
