@@ -5112,6 +5112,45 @@ return [
         },
         'tags'      : ['referrer', 'opener', 'html5', 'location', 'tabnabbing'],
         'reporter'  : '.mario'
-    } 
+    },
+ { /* ID 144 - Generating greater-than with HTML5 Named Character References */
+        'id'        : 144,
+        'category'  : 'html5',
+        'name'      : {
+            'en'    : 'Generating greater-than with HTML5 Named Character References',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'data'      : '<iframe srcdoc="<svg onload=%js_alert%&nvgt;"></iframe>\r\n\r\n<a href="javascript:&apos;<svg onload&equals;%js_alert_html5ent%&nvgt;&apos;">CLICK</a>',
+        'description' : {
+            'en'    : 'Some of the HTML5 Named Character references generate two ASCII characters, such as &nvlt; and &nvgt;. This can in some exotic scenarios be abused to generate valid HTML without actually closing a tag with an ASCII greater-than. The entity will produce the greater-than so we do not have to.',
+            'ja'    : '',
+            'ru'    : '', 
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'urls'		: ['https://developers.whatwg.org/named-character-references.html#named-character-references']
+        'howtofix'  : {
+            'en'    : 'Be very careful when HTML attributes are used to carry HTML data that is later being used on the website. When entities are accepted, some HTML entities can produce dangerous characters even if they don\'t look like it on first sight.',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'browsers'  : {
+            'chrome' : ['4.0', 'latest'], 
+            'opera' : ['12.0', 'latest'],
+            'internet explorer' : ['9.0', 'latest'],
+            'firefox' : ['4.x', 'latest'],
+            'safari' : ['4.0', 'latest']
+        },
+        'tags'      : ['entity', 'character reference', 'html5', 'iframe'],
+        'reporter'  : '.mario'
+    }    
 ]
 }));
