@@ -5113,7 +5113,7 @@ return [
         'tags'      : ['referrer', 'opener', 'html5', 'location', 'tabnabbing'],
         'reporter'  : '.mario'
     },
- { /* ID 144 - Generating greater-than with HTML5 Named Character References */
+    { /* ID 144 - Generating greater-than with HTML5 Named Character References */
         'id'        : 144,
         'category'  : 'html5',
         'name'      : {
@@ -5133,7 +5133,7 @@ return [
             'de'    : '',
             'zh'    : ''
         },
-        'urls'		: ['https://developers.whatwg.org/named-character-references.html#named-character-references']
+        'urls'		: ['https://developers.whatwg.org/named-character-references.html#named-character-references'],
         'howtofix'  : {
             'en'    : 'Be very careful when HTML attributes are used to carry HTML data that is later being used on the website. When entities are accepted, some HTML entities can produce dangerous characters even if they don\'t look like it on first sight.',
             'ja'    : '',
