@@ -5229,7 +5229,7 @@ return [
     },
     { /* ID 147 - JavaScript execution via <DETAILS> and ontoggle  */
         'id'         : 147,
-        'category'   : 'html', 
+        'category'   : 'html5', 
         'name'       : {
             'en' : 'JavaScript execution via <DETAILS> and ontoggle',
             'ja' : '',
