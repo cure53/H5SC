@@ -5191,7 +5191,7 @@ return [
         'tags'      : ['user interaction', 'passive elements', 'html5', 'css', 'contenteditable'],
         'reporter'  : '.mario, Ben Hayak, avlidienbrunn'
     },
-    { /* ID 31 - JavaScript execution via <FRAMESET> and onpageshow  */
+    { /* ID 146 - JavaScript execution via <FRAMESET> and onpageshow  */
         'id'         : 146,
         'category'   : 'html', 
         'name'       : {
@@ -5201,7 +5201,7 @@ return [
             'cs' : '',
             'de' : ''
         },
-        'data'       : '<frameset onpageshow=%js_alert%>',
+        'data'       : '<frameset onpageshow="%js_alert%">',
         'description': {
             'en' : 'The <FRAMESET> element fires an "onpageshow" event without user interaction on all modern browsers. This can be abused to bypass blacklists as the event is not very well known.',
             'ja' : '',
@@ -5225,6 +5225,39 @@ return [
             'safari' : ['4.0', 'latest']
         },
         'tags'      : ['frameset', 'onpageshow', 'html', 'legacy'],
+        'reporter'  : 'Qab'
+    },
+    { /* ID 147 - JavaScript execution via <DETAILS> and ontoggle  */
+        'id'         : 147,
+        'category'   : 'html', 
+        'name'       : {
+            'en' : 'JavaScript execution via <DETAILS> and ontoggle',
+            'ja' : '',
+            'ru' : '',
+            'cs' : '',
+            'de' : ''
+        },
+        'data'       : '<details open ontoggle="%js_alert%">',
+        'description': {
+            'en' : 'The <DETAILS> element fires an "ontoggle" event without user interaction on modern Blink-based browsers. This can be abused to bypass blacklists as the event-tag combination is not very well known.',
+            'ja' : '',
+            'ru' : '',
+            'cs' : '',
+            'de' : ''
+        },
+        'urls'    : [],
+        'howtofix'   : {
+            'en' : 'Be sure to work with whitelists when allowing users to submit markup - else experimentaltags like <DETAILS> might be forgotten to filter and escape.',
+            'ja' : '',
+            'ru' : '',
+            'cs' : '',
+            'de' : ''
+        },
+        'browsers'  : {
+            'chrome' : ['24.0', 'latest'], 
+            'opera' : ['16.0', 'latest']
+        },
+        'tags'      : ['details', 'ontoggle', 'html5', 'user interaction'],
         'reporter'  : 'Qab'
     }
 ]
