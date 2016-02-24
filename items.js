@@ -5258,7 +5258,7 @@ return [
             'opera' : ['16.0', 'latest']
         },
         'tags'      : ['details', 'ontoggle', 'html5', 'user interaction'],
-        'reporter'  : 'Qab'
+        'reporter'  : 'tsetnep, Psych0tr1a'
     },
     { /* ID 148 - JavaScript execution via <VIDEO> with empty source and rate change events */
         'id'         : 148,
