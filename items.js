@@ -5201,9 +5201,9 @@ return [
             'cs' : '',
             'de' : ''
         },
-        'data'       : '<frameset onpageshow="%js_alert%">',
+        'data'       : '<frameset onpageshow="%js_alert%">\r\n\r\n<body onpageshow="%js_alert%">',
         'description': {
-            'en' : 'The <FRAMESET> element fires an "onpageshow" event without user interaction on all modern browsers. This can be abused to bypass blacklists as the event is not very well known.',
+            'en' : 'The <FRAMESET> element fires an "onpageshow" event without user interaction on all modern browsers. This can be abused to bypass blacklists as the event is not very well known. Note, that the same behavior is exposed by the <BODY> tag as well.',
             'ja' : '',
             'ru' : '',
             'cs' : '',
@@ -5247,7 +5247,7 @@ return [
         },
         'urls'    : [],
         'howtofix'   : {
-            'en' : 'Be sure to work with whitelists when allowing users to submit markup - else experimentaltags like <DETAILS> might be forgotten to filter and escape.',
+            'en' : 'Be sure to work with whitelists when allowing users to submit markup - else experimental tags like <DETAILS> might be forgotten to filter and escape.',
             'ja' : '',
             'ru' : '',
             'cs' : '',
@@ -5258,6 +5258,38 @@ return [
             'opera' : ['16.0', 'latest']
         },
         'tags'      : ['details', 'ontoggle', 'html5', 'user interaction'],
+        'reporter'  : 'Qab'
+    },
+    { /* ID 148 - JavaScript execution via <VIDEO> with empty source and rate change events */
+        'id'         : 148,
+        'category'   : 'html5', 
+        'name'       : {
+            'en' : 'JavaScript execution via <VIDEO> with empty source and rate change events',
+            'ja' : '',
+            'ru' : '',
+            'cs' : '',
+            'de' : ''
+        },
+        'data'       : '<video src onratechange="alert(1)">',
+        'description': {
+            'en' : 'The <VIDEO> element fires an "onratechange" event without user interaction on Firefox, even if no actual value for the "src" attribute is given. This can be used to bypass WAF and IDS systems as this combination of tag and attributes is rather uncommon and unknown.',
+            'ja' : '',
+            'ru' : '',
+            'cs' : '',
+            'de' : ''
+        },
+        'urls'    : [],
+        'howtofix'   : {
+            'en' : 'Be sure to work with whitelists when allowing users to submit markup - else tags like <VIDEO> might be forgotten to filter and escape.',
+            'ja' : '',
+            'ru' : '',
+            'cs' : '',
+            'de' : ''
+        },
+        'browsers'  : {
+            'firefox' : ['15.0', 'latest']
+        },
+        'tags'      : ['video', 'onratechange', 'html5', 'user interaction', 'src'],
         'reporter'  : 'Qab'
     }
 ]
