@@ -5174,7 +5174,7 @@ return [
             'de'    : '',
             'zh'    : ''
         },
-        'urls'      : [],
+        'urls'      : ['https://jsfiddle.net/wmo6pr2v/'],
         'howtofix'  : {
             'en'    : 'Most modern browsers provide ways to execute JavaScript from passive elements by combining several aspects an attacker can control. Seemingly passive XSS should thus be treated with similar severity than active XSS.',
             'ja'    : '',
