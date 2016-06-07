@@ -1879,8 +1879,9 @@ return [
         },                        
         'browsers'   : {
             'opera': ['8.x', 'latest'], 
-            'chrome': ['3.0', 'latest'],
+            'chrome': ['3.0']
             'safari': ['4.0', 'latest']
+            'firefox': ['latest']
         },
         'tags'       : ['xss', 'javascript', 'opera', 'chrome', 'embed', 'safari', 'src', 'base64'],
         'reporter'   : '.mario'
