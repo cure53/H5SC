@@ -4217,7 +4217,7 @@ return [
             'cs' : 'Chcete-li zobrazit zdrojový kód webové stránky v prohlížeči Mozilla Firefox nebo v Google Chrome, můžete použít protokolu "view-source". Firefox umožňuje zobrazit zdrojový kód použitím "view-source" v atributu "src" u prvku <IFRAME>. Pokud pak na stjnou stránku umístíme také prvek <TEXTAREA>, můžeme po přetažení získat zdrojový kód cílové stránky. Tato technika obchází také CSS a JS ochranu proti clickajckingu.',
             'de' : ''
         },
-        'urls'    : ['http://www.contextis.co.uk/resources/white-papers/clickjacking/Context-Clickjacking_white_paper.pdf'],
+        'urls'    : ['https://www.contextis.com/documents/5/Context-Clickjacking_white_paper.pdf'],
         'howtofix'   : {
             'en' : '',
             'ja' : '',
