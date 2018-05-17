@@ -4182,7 +4182,7 @@ return [
             'cs' : 'Metoda "setData" umožňuje, s využitím ovladače události "ondragstart" a při nastaveném atributu "draggable" na "true", přetáhnout během drag-end-drop do rámu text "malicious code" namísto textu "Drop me". Rám může obsahovat vstupní pole pro převzetí těchto dat.',
             'de' : ''
         },
-        'urls'    : ['http://www.w3.org/TR/html5/dnd.html#dnd'],
+        'urls'    : ['https://www.w3.org/TR/2010/WD-html5-20101019/dnd.html'],
         'howtofix'   : {
             'en' : '',
             'ja' : '',
