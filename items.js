@@ -5257,7 +5257,8 @@ return [
         },
         'browsers'  : {
             'chrome' : ['24.0', 'latest'], 
-            'opera' : ['16.0', 'latest']
+            'opera' : ['16.0', 'latest'],
+            'firefox' : ['65.0', 'latest']
         },
         'tags'      : ['details', 'ontoggle', 'html5', 'user interaction'],
         'reporter'  : 'tsetnep, Psych0tr1a'
